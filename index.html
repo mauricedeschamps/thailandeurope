@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Thailand Travel Guide - Multilingual PWA</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="icons/icon-192.jpg">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#1e1e2f">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+        }
+
+        /* Dark mode (default) */
+        body {
+            --bg: #121212;
+            --surface: #1e1e2f;
+            --card: #2a2a3a;
+            --text: #eeeeee;
+            --text-secondary: #bbbbbb;
+            --border: #444;
+            --accent: #ff7b00;
+            --shadow: rgba(0,0,0,0.5);
+            background: var(--bg);
+            color: var(--text);
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.5;
+        }
+
+        body.light {
+            --bg: #f5f5f7;
+            --surface: #ffffff;
+            --card: #ffffff;
+            --text: #1a1a2e;
+            --text-secondary: #4a4a5a;
+            --border: #dddddd;
+            --accent: #e65c00;
+            --shadow: rgba(0,0,0,0.1);
+        }
+
+        .app {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+
+        header {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            background: linear-gradient(135deg, var(--accent), #ffaa44);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .toolbar {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        button, .lang-btn {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 0.4rem 0.8rem;
+            border-radius: 2rem;
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        button.active-lang {
+            background: var(--accent);
+            color: white;
+            border-color: var(--accent);
+        }
+
+        .lang-group {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+
+        .sponsor {
+            background: var(--surface);
+            border-radius: 1.5rem;
+            padding: 1rem;
+            margin: 1.5rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+            border: 1px solid var(--border);
+        }
+        .sponsor-img {
+            width: 120px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 12px;
+            background: #ccc;
+        }
+        .sponsor-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.5rem 1.2rem;
+            border-radius: 2rem;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+        }
+
+        .carousel-container {
+            position: relative;
+            margin: 1rem 0;
+        }
+        .carousel-wrapper {
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+            display: flex;
+            gap: 0;
+            scrollbar-width: thin;
+        }
+        .carousel-slide {
+            flex: 0 0 100%;
+            scroll-snap-align: start;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            padding: 0.5rem;
+        }
+        @media (min-width: 768px) {
+            .carousel-slide {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (min-width: 1024px) {
+            .carousel-slide {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        .card {
+            background: var(--card);
+            border-radius: 1.5rem;
+            overflow: hidden;
+            cursor: pointer;
+            box-shadow: 0 4px 12px var(--shadow);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid var(--border);
+        }
+        .card:hover {
+            transform: translateY(-4px);
+        }
+        .card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background: #555;
+        }
+        .card-content {
+            padding: 1rem;
+        }
+        .card-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .card-desc {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        .carousel-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .nav-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--border);
+            cursor: pointer;
+        }
+        .nav-dot.active {
+            background: var(--accent);
+            width: 24px;
+            border-radius: 5px;
+        }
+
+        .detail-page {
+            background: var(--bg);
+            border-radius: 2rem;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+        .detail-img {
+            width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .back-btn {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 0.6rem 1.2rem;
+            border-radius: 2rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            cursor: pointer;
+        }
+        .official-link {
+            display: inline-block;
+            margin-top: 1rem;
+            background: var(--accent);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            text-decoration: none;
+        }
+
+        footer {
+            margin-top: 2rem;
+            padding: 1.5rem 0;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+        .map-frame {
+            margin: 1.5rem 0;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            height: 250px;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .contact-email {
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="app" id="app">
+    <header>
+        <h1 id="page-title">✨ Thailand Travel Guide</h1>
+        <div class="toolbar">
+            <button id="themeToggle" aria-label="Dark/Light">🌓 Dark/Light</button>
+            <div class="lang-group">
+                <button data-lang="en" class="lang-btn active-lang">🇬🇧 EN</button>
+                <button data-lang="de" class="lang-btn">🇩🇪 DE</button>
+                <button data-lang="it" class="lang-btn">🇮🇹 IT</button>
+                <button data-lang="ru" class="lang-btn">🇷🇺 RU</button>
+                <button data-lang="th" class="lang-btn">🇹🇭 ไทย</button>
+                <button data-lang="ja" class="lang-btn">🇯🇵 日本語</button>
+            </div>
+        </div>
+    </header>
+
+    <div id="sponsorTop" class="sponsor">
+        <img id="sponsorTopImg" class="sponsor-img" src="https://picsum.photos/id/20/120/60" alt="Sponsor">
+        <a id="sponsorTopLink" href="#" target="_blank" class="sponsor-btn">Visit Site</a>
+    </div>
+
+    <div id="mainView">
+        <div class="carousel-container">
+            <div class="carousel-wrapper" id="carouselWrapper">
+                <div class="carousel-slide" id="slide1"></div>
+                <div class="carousel-slide" id="slide2"></div>
+            </div>
+            <div class="carousel-nav" id="carouselNav"></div>
+        </div>
+    </div>
+
+    <div id="sponsorBottom" class="sponsor">
+        <img id="sponsorBottomImg" class="sponsor-img" src="https://picsum.photos/id/26/120/60" alt="Sponsor">
+        <a id="sponsorBottomLink" href="#" target="_blank" class="sponsor-btn">Visit Site</a>
+    </div>
+
+    <div class="map-frame">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d198413.21010103857!2d100.49319470273437!3d13.7367173177169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e29f2d386c6c8f%3A0x6c49b9d4b5f7b9a4!2z4Lia4Li44LiH4LmA4LiX4Lia4Liy4Lia4Liy4Lil4Liy4LiB4LmA4LiU4Lix4LiZ4LmM4Lio4Liy4LiZ4LiB4Liy4Lij4LmM4Lir4Liy4LiZ4LiY4LmJ4Liy!5e0!3m2!1sen!2sth!4v1650000000000!5m2!1sen!2sth" allowfullscreen loading="lazy"></iframe>
+    </div>
+
+    <div id="detailView" class="hidden"></div>
+
+    <footer>
+        <div>Contact us<br><a href="mailto:mementomorikatsu@gmail.com" class="contact-email">mementomorikatsu@gmail.com</a></div>
+    </footer>
+</div>
+
+<script>
+    // ======================= 多言語データ (EN, DE, IT, RU, TH, JA) =======================
+    const translations = {
+        en: {
+            title: "✨ Thailand Travel Guide",
+            sponsorBtn: "Visit Site",
+            backBtn: "← Back to list",
+            officialSite: "Official Website",
+            transportLabel: "🚆 How to get there",
+            stationLabel: "📍 Nearest station / transport",
+            attractionLabel: "⭐ Highlights"
+        },
+        de: {
+            title: "✨ Thailand Reiseführer",
+            sponsorBtn: "Website besuchen",
+            backBtn: "← Zurück zur Liste",
+            officialSite: "Offizielle Website",
+            transportLabel: "🚆 Anreise",
+            stationLabel: "📍 Nächste Station / Verkehrsmittel",
+            attractionLabel: "⭐ Highlights"
+        },
+        it: {
+            title: "✨ Guida Turistica della Thailandia",
+            sponsorBtn: "Visita il sito",
+            backBtn: "← Torna alla lista",
+            officialSite: "Sito Ufficiale",
+            transportLabel: "🚆 Come arrivare",
+            stationLabel: "📍 Stazione / mezzi più vicini",
+            attractionLabel: "⭐ Punti salienti"
+        },
+        ru: {
+            title: "✨ Путеводитель по Таиланду",
+            sponsorBtn: "Перейти на сайт",
+            backBtn: "← Назад к списку",
+            officialSite: "Официальный сайт",
+            transportLabel: "🚆 Как добраться",
+            stationLabel: "📍 Ближайшая станция / транспорт",
+            attractionLabel: "⭐ Основные достопримечательности"
+        },
+        th: {
+            title: "✨ คู่มือท่องเที่ยวไทย",
+            sponsorBtn: "เว็บไซต์ทางการ",
+            backBtn: "← กลับไปรายการ",
+            officialSite: "เว็บไซต์ทางการ",
+            transportLabel: "🚆 วิธีการเดินทาง",
+            stationLabel: "📍 สถานีใกล้เคียง",
+            attractionLabel: "⭐ จุดเด่น"
+        },
+        ja: {
+            title: "✨ タイ旅行ガイド",
+            sponsorBtn: "公式サイトへ",
+            backBtn: "← 一覧に戻る",
+            officialSite: "公式ウェブサイト",
+            transportLabel: "🚆 アクセス方法",
+            stationLabel: "📍 最寄り駅 / 交通",
+            attractionLabel: "⭐ 見どころ"
+        }
+    };
+
+    // 12観光スポット (多言語対応: en, de, it, ru, th, ja)
+    const places = [
+        { id: 0, img: "https://picsum.photos/id/104/400/300",
+          title: { en: "Wat Phra Kaew (Emerald Buddha)", de: "Wat Phra Kaew (Smaragd-Buddha)", it: "Wat Phra Kaew (Buddha di Smeraldo)", ru: "Ват Пхра Кео (Изумрудный Будда)", th: "วัดพระแก้ว", ja: "ワット・プラケオ（エメラルド仏）" },
+          shortDesc: { en: "The most sacred temple in Thailand.", de: "Der heiligste Tempel Thailands.", it: "Il tempio più sacro della Thailandia.", ru: "Самый священный храм Таиланда.", th: "วัดที่ศักดิ์สิทธิ์ที่สุดของไทย", ja: "タイで最も神聖な寺院" },
+          detail: { en: "Located within Grand Palace complex. Strict dress code. Nearest station: Sanam Chai MRT.", de: "Im Großen Palastkomplex gelegen. Strenge Kleiderordnung. Nächste Station: MRT Sanam Chai.", it: "Situato all'interno del complesso del Grande Palazzo. Codice di abbigliamento rigoroso. Stazione MRT Sanam Chai.", ru: "Находится на территории комплекса Великого дворца. Строгий дресс-код. Ближайшая станция MRT Sanam Chai.", th: "ตั้งอยู่ในเขตพระราชวังใหญ่ รถไฟฟ้า MRT สนามไชย ต้องแต่งกายสุภาพ", ja: "大宮殿の敷地内。服装規定あり。最寄り駅：MRTサナームチャイ駅" },
+          station: { en: "MRT Sanam Chai + walk 10 min", de: "MRT Sanam Chai + 10 min Fußweg", it: "MRT Sanam Chai + 10 min a piedi", ru: "MRT Sanam Chai + 10 минут пешком", th: "MRT สนามไชย เดิน 10 นาที", ja: "MRTサナームチャイ駅 徒歩10分" },
+          url: "https://www.royalgrandpalace.th/" },
+        { id: 1, img: "https://picsum.photos/id/106/400/300",
+          title: { en: "Wat Pho (Reclining Buddha)", de: "Wat Pho (Liegender Buddha)", it: "Wat Pho (Buddha sdraiato)", ru: "Ват Пхо (Лежащий Будда)", th: "วัดโพธิ์", ja: "ワット・ポー（涅槃仏）" },
+          shortDesc: { en: "Giant reclining Buddha & massage school.", de: "Riesiger liegender Buddha & Massageschule.", it: "Gigantesco Buddha sdraiato e scuola di massaggi.", ru: "Гигантский лежащий Будда и школа массажа.", th: "พระนอนขนาดใหญ่และโรงเรียนนวดแผนไทย", ja: "巨大な涅槃仏とタイ古式マッサージ発祥の地" },
+          detail: { en: "Nearest: MRT Sanam Chai or ferry to Tha Tien. Famous for traditional Thai massage.", de: "Nächste: MRT Sanam Chai oder Fähre nach Tha Tien. Berühmt für Thai-Massage.", it: "Vicino: MRT Sanam Chai o traghetto per Tha Tien. Famoso per il massaggio thailandese.", ru: "Ближайшая станция: MRT Sanam Chai или паром до Tha Tien. Знаменит тайским массажем.", th: "MRT สนามไชย หรือเรือถึงท่าเตียน ขึ้นชื่อเรื่องนวดแผนไทย", ja: "最寄り：MRTサナームチャイ駅またはTha Tienまでフェリー。タイ古式マッサージで有名。" },
+          station: { en: "MRT Sanam Chai / Ferry", de: "MRT Sanam Chai / Fähre", it: "MRT Sanam Chai / Traghetto", ru: "MRT Sanam Chai / Паром", th: "MRT สนามไชย / เรือ", ja: "MRTサナームチャイ駅 / フェリー" },
+          url: "https://www.watpho.com/" },
+        { id: 2, img: "https://picsum.photos/id/96/400/300",
+          title: { en: "Chatuchak Market", de: "Chatuchak Markt", it: "Mercato di Chatuchak", ru: "Рынок Чатучак", th: "ตลาดนัดจตุจักร", ja: "チャトゥチャック市場" },
+          shortDesc: { en: "Weekend mega market, 15,000+ stalls.", de: "Wochenend-Megamarkt, über 15.000 Stände.", it: "Mercato gigante del fine settimana, oltre 15.000 bancarelle.", ru: "Гигантский рынок выходного дня, более 15 000 прилавков.", th: "ตลาดนัดสุดสัปดาห์ 15,000+ ร้าน", ja: "週末限定の巨大マーケット、15,000店以上" },
+          detail: { en: "BTS Mo Chit / MRT Chatuchak Park. Only Sat-Sun. Great for souvenirs & street food.", de: "BTS Mo Chit / MRT Chatuchak Park. Nur Sa-So. Ideal für Souvenirs & Street Food.", it: "BTS Mo Chit / MRT Chatuchak Park. Solo sab-dom. Ottimo per souvenir e cibo di strada.", ru: "BTS Mo Chit / MRT Chatuchak Park. Только сб-вс. Отлично для сувениров и уличной еды.", th: "BTS หมอชิต / MRT สวนจตุจักร เปิดเสาร์-อาทิตย์ ของที่ระลึกและอาหารข้างทาง", ja: "BTSモーチット駅 / MRTチャトゥチャックパーク駅。土曜・日曜のみ。お土産と屋台に最適。" },
+          station: { en: "BTS Mo Chit / MRT Chatuchak Park", de: "BTS Mo Chit / MRT Chatuchak Park", it: "BTS Mo Chit / MRT Chatuchak Park", ru: "BTS Mo Chit / MRT Chatuchak Park", th: "BTS หมอชิต / MRT สวนจตุจักร", ja: "BTSモーチット駅 / MRTチャトゥチャックパーク駅" },
+          url: "https://www.chatuchakmarket.org/" },
+        { id: 3, img: "https://picsum.photos/id/30/400/300",
+          title: { en: "Ayutthaya Historical Park", de: "Historischer Park Ayutthaya", it: "Parco Storico di Ayutthaya", ru: "Исторический парк Аюттхая", th: "อุทยานประวัติศาสตร์อยุธยา", ja: "アユタヤ歴史公園" },
+          shortDesc: { en: "UNESCO ancient capital ruins.", de: "UNESCO-Weltkulturerbe, Ruinen der alten Hauptstadt.", it: "Rovine dell'antica capitale UNESCO.", ru: "Руины древней столицы, объект ЮНЕСКО.", th: "ซากปรักหักพังเมืองหลวงเก่า มรดกโลก", ja: "ユネスコ世界遺産の古代遺跡" },
+          detail: { en: "Train from Bangkok (1.5h). Rent a bicycle to explore temples like Wat Mahathat.", de: "Zug von Bangkok (1,5 Std.). Fahrrad mieten, um Tempel wie Wat Mahathat zu erkunden.", it: "Treno da Bangkok (1,5 ore). Noleggia una bicicletta per esplorare templi come Wat Mahathat.", ru: "Поезд из Бангкока (1,5 ч). Арендуйте велосипед, чтобы осмотреть храмы, такие как Ват Махатхат.", th: "รถไฟจากกรุงเทพฯ 1.5 ชม. ปั่นจักรยานชมวัดมหาธาตุ", ja: "バンコクから電車で約1.5時間。自転車を借りてワット・マハタートなどの寺院を巡る。" },
+          station: { en: "Ayutthaya Railway Station", de: "Bahnhof Ayutthaya", it: "Stazione ferroviaria di Ayutthaya", ru: "Железнодорожная станция Аюттхая", th: "สถานีรถไฟอยุธยา", ja: "アユタヤ駅" },
+          url: "https://www.ayutthaya-history.com/" },
+        { id: 4, img: "https://picsum.photos/id/152/400/300",
+          title: { en: "Chiang Mai Old City", de: "Altstadt von Chiang Mai", it: "Città Vecchia di Chiang Mai", ru: "Старый город Чиангмай", th: "เมืองเก่าเชียงใหม่", ja: "チェンマイ旧市街" },
+          shortDesc: { en: "Ancient walls, temples & night bazaar.", de: "Alte Mauern, Tempel und Nachtbasar.", it: "Mura antiche, templi e bazar notturno.", ru: "Древние стены, храмы и ночной базар.", th: "กำแพงเมืองเก่า วัด และตลาดกลางคืน", ja: "古い城壁、寺院、ナイトバザール" },
+          detail: { en: "Fly to Chiang Mai. Songthaews (red trucks) are common. Visit Wat Phra Singh.", de: "Flug nach Chiang Mai. Songthaews (rote Trucks) sind üblich. Besuchen Sie Wat Phra Singh.", it: "Volo per Chiang Mai. I Songthaew (camion rossi) sono comuni. Visita Wat Phra Singh.", ru: "Летите в Чиангмай. Сонгтэу (красные грузовики) распространены. Посетите Ват Пхра Сингх.", th: "บินไปเชียงใหม่ รถสองแถวแดง วัดพระสิงห์", ja: "バンコクから飛行機でチェンマイへ。赤いソンテウが一般的。ワット・プラシンへ。" },
+          station: { en: "Chiang Mai Airport + city songthaew", de: "Flughafen Chiang Mai + Songthaew", it: "Aeroporto di Chiang Mai + songthaew", ru: "Аэропорт Чиангмай + сонгтэу", th: "สนามบินเชียงใหม่ + สองแถว", ja: "チェンマイ空港 + 市内ソンテウ" },
+          url: "https://www.tourismchiangmai.org/" },
+        { id: 5, img: "https://picsum.photos/id/29/400/300",
+          title: { en: "Doi Suthep", de: "Doi Suthep", it: "Doi Suthep", ru: "Дой Сутеп", th: "ดอยสุเทพ", ja: "ドイ・ステプ" },
+          shortDesc: { en: "Mountain temple with golden pagoda.", de: "Bergtempel mit goldener Pagode.", it: "Tempio di montagna con pagoda d'oro.", ru: "Горный храм с золотой пагодой.", th: "วัดบนดอยที่มีเจดีย์ทองคำ", ja: "黄金の仏塔がある山頂寺院" },
+          detail: { en: "From Chiang Mai, take songthaew from Pratu Chang Phuak. 306 steps or cable car.", de: "Von Chiang Mai mit dem Songthaew von Pratu Chang Phuak. 306 Stufen oder Seilbahn.", it: "Da Chiang Mai, prendi songthaew da Pratu Chang Phuak. 306 gradini o funivia.", ru: "Из Чиангмая на сонгтэу от Прату Чанг Пхуак. 306 ступеней или канатная дорога.", th: "จากเชียงใหม่นั่งสองแถวจากประตูช้างเผือก ขึ้นบันได 306 ขั้นหรือกระเช้า", ja: "チェンマイからチャンプアック門発のソンテウ。306段の階段またはケーブルカー。" },
+          station: { en: "Songthaew from Chang Phuak Gate", de: "Songthaew vom Chang Phuak Tor", it: "Songthaew da Chang Phuak Gate", ru: "Сонгтэу от ворот Чанг Пхуак", th: "สองแถวจากประตูช้างเผือก", ja: "チャンプアック門からソンテウ" },
+          url: "https://www.doisuthep.com/" },
+        { id: 6, img: "https://picsum.photos/id/163/400/300",
+          title: { en: "Patong Beach, Phuket", de: "Patong Beach, Phuket", it: "Spiaggia di Patong, Phuket", ru: "Пляж Патонг, Пхукет", th: "หาดป่าตอง ภูเก็ต", ja: "パトンビーチ（プーケット）" },
+          shortDesc: { en: "Lively beach with water sports & nightlife.", de: "Lebhafter Strand mit Wassersport & Nachtleben.", it: "Spiaggia vivace con sport acquatici e vita notturna.", ru: "Оживленный пляж с водными видами спорта и ночной жизнью.", th: "ชายหาดคึกคัก กีฬาทางน้ำ กลางคืนสนุก", ja: "ウォータースポーツとナイトライフが楽しめる賑やかなビーチ" },
+          detail: { en: "Fly to Phuket, then taxi/minibus. Jet ski, banana boat.", de: "Flug nach Phuket, dann Taxi/Minibus. Jetski, Bananenboot.", it: "Volo per Phuket, poi taxi/minibus. Moto d'acqua, banana boat.", ru: "Летите на Пхукет, затем такси/микроавтобус. Гидроцикл, банановая лодка.", th: "นั่งเครื่องบินถึงภูเก็ต รถแท็กซี่ เจ็ทสกี เรือกล้วย", ja: "プーケット空港からタクシーまたはミニバス。ジェットスキーやバナナボートに最適。" },
+          station: { en: "Phuket Airport + taxi (45 min)", de: "Flughafen Phuket + Taxi (45 min)", it: "Aeroporto di Phuket + taxi (45 min)", ru: "Аэропорт Пхукет + такси (45 минут)", th: "สนามบินภูเก็ต + แท็กซี่ 45 นาที", ja: "プーケット空港 + タクシーで45分" },
+          url: "https://www.phuket.net/" },
+        { id: 7, img: "https://picsum.photos/id/130/400/300",
+          title: { en: "Phi Phi Islands", de: "Phi Phi Inseln", it: "Isole Phi Phi", ru: "Острова Пхи Пхи", th: "หมู่เกาะพีพี", ja: "ピピ諸島" },
+          shortDesc: { en: "Crystal clear water, Maya Bay.", de: "Kristallklares Wasser, Maya Bay.", it: "Acqua cristallina, Baia di Maya.", ru: "Кристально чистая вода, бухта Майя.", th: "น้ำใสมาก อ่าวมาหยา", ja: "透き通った海、マヤ湾" },
+          detail: { en: "Speedboat tour from Phuket or Krabi. Snorkeling and scenic viewpoints.", de: "Schnellboot-Tour von Phuket oder Krabi. Schnorcheln und Aussichtspunkte.", it: "Tour in speedboat da Phuket o Krabi. Snorkeling e punti panoramici.", ru: "Тур на скоростном катере из Пхукета или Краби. Сноркелинг и живописные виды.", th: "เรือสปีดโบ๊ทจากภูเก็ตหรือกระบี่ ดำน้ำตื้น จุดชมวิว", ja: "プーケットまたはクラビからスピードボートツアー。シュノーケリングと絶景ポイント。" },
+          station: { en: "Rassada Pier (Phuket) + speedboat", de: "Rassada Pier (Phuket) + Schnellboot", it: "Molo Rassada (Phuket) + speedboat", ru: "Причал Рассада (Пхукет) + скоростной катер", th: "ท่าเรือรัษฎา + สปีดโบ๊ท", ja: "ラッサダー埠頭（プーケット）+ スピードボート" },
+          url: "https://www.phiphiisland.com/" },
+        { id: 8, img: "https://picsum.photos/id/94/400/300",
+          title: { en: "Phuket Old Town", de: "Altstadt von Phuket", it: "Città Vecchia di Phuket", ru: "Старый город Пхукета", th: "เมืองเก่าภูเก็ต", ja: "プーケット旧市街" },
+          shortDesc: { en: "Sino-Portuguese architecture & cafes.", de: "Sino-portugiesische Architektur & Cafés.", it: "Architettura sino-portoghese e caffè.", ru: "Китайско-португальская архитектура и кафе.", th: "สถาปัตยกรรมจีน-โปรตุเกส ร้านกาแฟ", ja: "シノ・ポルトガル様式の建築とカフェ" },
+          detail: { en: "Walkable area, famous for Sunday Walking Street Market.", de: "Fußgängerzone, berühmt für den Sunday Walking Street Market.", it: "Zona pedonale, famosa per il mercato domenicale di Walking Street.", ru: "Пешеходная зона, известная воскресным рынком Walking Street.", th: "เดินเล่น ตลาดนัดวันอาทิตย์", ja: "徒歩エリア。日曜日の歩行者天国マーケットで有名。" },
+          station: { en: "Local bus or taxi from beaches", de: "Lokaler Bus oder Taxi von den Stränden", it: "Autobus locale o taxi dalle spiagge", ru: "Местный автобус или такси от пляжей", th: "รถประจำทางหรือแท็กซี่จากหาด", ja: "ビーチから地元バスまたはタクシー" },
+          url: "https://oldtownphuket.com/" },
+        { id: 9, img: "https://picsum.photos/id/42/400/300",
+          title: { en: "Damnoen Saduak Floating Market", de: "Schwimmender Markt Damnoen Saduak", it: "Mercato galleggiante di Damnoen Saduak", ru: "Плавающий рынок Дамноен Садуак", th: "ตลาดน้ำดำเนินสะดวก", ja: "ダムヌン・サドアク水上マーケット" },
+          shortDesc: { en: "Paddle boats selling fresh food.", de: "Paddelboote mit frischen Lebensmitteln.", it: "Barche a remi che vendono cibo fresco.", ru: "Лодки на веслах продают свежие продукты.", th: "เรือ paddles ขายอาหารสด", ja: "新鮮な料理を売る手漕ぎボート" },
+          detail: { en: "Day trip from Bangkok (1.5h drive). Best early morning. Hire long-tail boat.", de: "Tagesausflug ab Bangkok (1,5 Std. Fahrt). Am besten früh morgens. Langschwanzboot mieten.", it: "Gita di un giorno da Bangkok (1,5 ore di auto). Ideale al mattino presto. Noleggia una barca long-tail.", ru: "Однодневная поездка из Бангкока (1,5 часа езды). Лучше всего ранним утром. Аренда лодки с длинным хвостом.", th: "ทริปวันเดียวจากกรุงเทพฯ เวลาดีตอนเช้า เรือหางยาว", ja: "バンコクから日帰り（車で1.5時間）。早朝がベスト。長尾船をチャーター。" },
+          station: { en: "Minivan from Southern Bus Terminal", de: "Minivan vom südlichen Busbahnhof", it: "Minivan dal terminal degli autobus sud", ru: "Микроавтобус от южного автовокзала", th: "รถตู้จากสถานีขนส่งสายใต้", ja: "南部バスターミナルからミニバン" },
+          url: "https://www.damnoensaduak.com/" },
+        { id: 10, img: "https://picsum.photos/id/39/400/300",
+          title: { en: "Khao Soi (Chiang Mai dish)", de: "Khao Soi (Gericht aus Chiang Mai)", it: "Khao Soi (piatto di Chiang Mai)", ru: "Кхао Сой (блюдо Чиангмая)", th: "ข้าวซอยเชียงใหม่", ja: "カオソーイ（チェンマイ料理）" },
+          shortDesc: { en: "Famous northern Thai curry noodle soup.", de: "Berühmte nordthailändische Curry-Nudelsuppe.", it: "Zuppa di noodle al curry tailandese settentrionale.", ru: "Знаменитый северный тайский суп с лапшой карри.", th: "แกงกะหรี่เส้น noodles ภาคเหนือ", ja: "タイ北部の有名なカレー風味の麺料理" },
+          detail: { en: "Try at Khao Soi Khun Yai or many local shops. Best lunch spot.", de: "Probieren Sie im Khao Soi Khun Yai oder in vielen lokalen Geschäften. Bester Mittagstisch.", it: "Prova da Khao Soi Khun Yai o in molti negozi locali. Ottimo per pranzo.", ru: "Попробуйте в Khao Soi Khun Yai или в местных магазинах. Лучшее место для обеда.", th: "ลองที่ข้าวซอยคุณยาย หรือร้านท้องถิ่น", ja: "カオソーイ・クンヤイまたは地元の多くの店で。ランチに最適。" },
+          station: { en: "Nimman area or Old City", de: "Nimman-Gebiet oder Altstadt", it: "Area Nimman o Città Vecchia", ru: "Район Нимман или Старый город", th: "ย่านนิมมาน หรือเมืองเก่า", ja: "ニマン地区または旧市街" },
+          url: "https://www.chiangmaicitylife.com/" },
+        { id: 11, img: "https://picsum.photos/id/431/400/300",
+          title: { en: "Chao Phraya River Cruise", de: "Chao Phraya Flusskreuzfahrt", it: "Crociera sul fiume Chao Phraya", ru: "Круиз по реке Чао Прайя", th: "ล่องเรือเจ้าพระยา", ja: "チャオプラヤ川クルーズ" },
+          shortDesc: { en: "Dinner cruise with temple lights.", de: "Abendkreuzfahrt mit Tempelbeleuchtung.", it: "Crociera con cena e luci dei templi.", ru: "Ужин-круиз с освещением храмов.", th: "อาหารค่ำลอยน้ำ ชมวัด illuminated", ja: "寺院のライトアップを楽しむディナークルーズ" },
+          detail: { en: "Pick from Saphan Taksin pier. Book evening cruise with Thai buffet.", de: "Abfahrt am Saphan Taksin Pier. Buchen Sie eine Abendkreuzfahrt mit thailändischem Buffet.", it: "Partenza dal molo Saphan Taksin. Prenota una crociera serale con buffet thailandese.", ru: "Отправление от причала Сапхан Таксин. Забронируйте вечерний круиз с тайским шведским столом.", th: "ท่าสะพานตากสิน จองตอนเย็น buffet ไทย", ja: "サパーンタクシン桟橋から出発。タイ料理ビュッフェ付き夜のクルーズを予約。" },
+          station: { en: "BTS Saphan Taksin", de: "BTS Saphan Taksin", it: "BTS Saphan Taksin", ru: "BTS Saphan Taksin", th: "BTS สะพานตากสิน", ja: "BTSサパーンタクシン駅" },
+          url: "https://www.chaophrayacruise.com/" }
+    ];
+
+    let currentLang = 'en';
+    let currentSlide = 0;
+    let selectedPlace = null;
+
+    function updateLanguage() {
+        document.getElementById('page-title').innerText = translations[currentLang].title;
+        document.querySelectorAll('.sponsor-btn').forEach(btn => btn.innerText = translations[currentLang].sponsorBtn);
+        renderCarousel();
+        if (selectedPlace !== null) showDetail(selectedPlace);
+    }
+
+    function renderCarousel() {
+        const slide1 = document.getElementById('slide1');
+        const slide2 = document.getElementById('slide2');
+        const items1 = places.slice(0,6);
+        const items2 = places.slice(6,12);
+        slide1.innerHTML = '';
+        slide2.innerHTML = '';
+        items1.forEach(p => createCard(p, slide1));
+        items2.forEach(p => createCard(p, slide2));
+        updateDots();
+    }
+
+    function createCard(place, container) {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.onclick = () => showDetail(place.id);
+        const img = document.createElement('img');
+        img.src = place.img;
+        img.alt = place.title[currentLang];
+        img.className = 'card-img';
+        const content = document.createElement('div');
+        content.className = 'card-content';
+        const title = document.createElement('div');
+        title.className = 'card-title';
+        title.innerText = place.title[currentLang];
+        const desc = document.createElement('div');
+        desc.className = 'card-desc';
+        desc.innerText = place.shortDesc[currentLang];
+        content.appendChild(title);
+        content.appendChild(desc);
+        card.appendChild(img);
+        card.appendChild(content);
+        container.appendChild(card);
+    }
+
+    function updateDots() {
+        const nav = document.getElementById('carouselNav');
+        nav.innerHTML = '';
+        for (let i = 0; i < 2; i++) {
+            const dot = document.createElement('div');
+            dot.className = 'nav-dot' + (i === currentSlide ? ' active' : '');
+            dot.onclick = () => goToSlide(i);
+            nav.appendChild(dot);
+        }
+    }
+
+    function goToSlide(index) {
+        const wrapper = document.getElementById('carouselWrapper');
+        const slideWidth = wrapper.clientWidth;
+        wrapper.scrollTo({ left: index * slideWidth, behavior: 'smooth' });
+        currentSlide = index;
+        updateDots();
+    }
+
+    function initCarouselScroll() {
+        const wrapper = document.getElementById('carouselWrapper');
+        wrapper.addEventListener('scroll', () => {
+            const newIndex = Math.round(wrapper.scrollLeft / wrapper.clientWidth);
+            if (newIndex !== currentSlide && !isNaN(newIndex)) {
+                currentSlide = newIndex;
+                updateDots();
+            }
+        });
+        window.addEventListener('resize', () => goToSlide(currentSlide));
+    }
+
+    function showDetail(id) {
+        selectedPlace = id;
+        const place = places[id];
+        const detailDiv = document.getElementById('detailView');
+        const mainView = document.getElementById('mainView');
+        mainView.classList.add('hidden');
+        detailDiv.classList.remove('hidden');
+        const trans = translations[currentLang];
+        detailDiv.innerHTML = `
+            <div class="detail-page">
+                <button class="back-btn" id="backToListBtn">${trans.backBtn}</button>
+                <img class="detail-img" src="${place.img}" alt="${place.title[currentLang]}">
+                <h2>${place.title[currentLang]}</h2>
+                <p><strong>⭐</strong> ${place.shortDesc[currentLang]}</p>
+                <p><strong>${trans.attractionLabel}</strong><br> ${place.detail[currentLang]}</p>
+                <p><strong>${trans.stationLabel}</strong><br> ${place.station[currentLang]}</p>
+                <a href="${place.url}" target="_blank" class="official-link">${trans.officialSite} ↗</a>
+            </div>
+        `;
+        document.getElementById('backToListBtn').onclick = () => {
+            detailDiv.classList.add('hidden');
+            mainView.classList.remove('hidden');
+            selectedPlace = null;
+        };
+    }
+
+    function initTheme() {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (!localStorage.getItem('theme')) {
+            document.body.classList.toggle('light', !prefersDark);
+        } else {
+            document.body.classList.toggle('light', localStorage.getItem('theme') === 'light');
+        }
+        document.getElementById('themeToggle').onclick = () => {
+            document.body.classList.toggle('light');
+            const isLight = document.body.classList.contains('light');
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        };
+    }
+
+    function initLang() {
+        const btns = document.querySelectorAll('.lang-btn');
+        btns.forEach(btn => {
+            btn.onclick = () => {
+                currentLang = btn.dataset.lang;
+                btns.forEach(b => b.classList.remove('active-lang'));
+                btn.classList.add('active-lang');
+                updateLanguage();
+            };
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Demo sponsor images & links
+        document.getElementById('sponsorTopImg').src = "https://picsum.photos/id/10/120/60";
+        document.getElementById('sponsorTopLink').href = "https://www.tourismthailand.org";
+        document.getElementById('sponsorBottomImg').src = "https://picsum.photos/id/12/120/60";
+        document.getElementById('sponsorBottomLink').href = "https://www.thailandfestival.com";
+        renderCarousel();
+        initCarouselScroll();
+        goToSlide(0);
+        initTheme();
+        initLang();
+        updateLanguage();
+    });
+
+    // Service Worker registration for PWA
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('sw.js').then(reg => {
+                console.log('SW registered: ', reg);
+            }).catch(err => console.log('SW registration failed: ', err));
+        });
+    }
+</script>
+</body>
+</html>
