@@ -270,22 +270,22 @@
 <body>
 <div class="app" id="app">
     <header>
-        <h1 id="page-title">✨ Thailand Travel Guide</h1>
+        <h1 id="page-title">âœ¨ Thailand Travel Guide</h1>
         <div class="toolbar">
-            <button id="themeToggle" aria-label="Dark/Light">🌓 Dark/Light</button>
+            <button id="themeToggle" aria-label="Dark/Light">ðŸŒ“ Dark/Light</button>
             <div class="lang-group">
-                <button data-lang="en" class="lang-btn active-lang">🇬🇧 EN</button>
-                <button data-lang="de" class="lang-btn">🇩🇪 DE</button>
-                <button data-lang="it" class="lang-btn">🇮🇹 IT</button>
-                <button data-lang="ru" class="lang-btn">🇷🇺 RU</button>
-                <button data-lang="th" class="lang-btn">🇹🇭 ไทย</button>
-                <button data-lang="ja" class="lang-btn">🇯🇵 日本語</button>
+                <button data-lang="en" class="lang-btn active-lang">ðŸ‡¬ðŸ‡§ EN</button>
+                <button data-lang="de" class="lang-btn">ðŸ‡©ðŸ‡ª DE</button>
+                <button data-lang="it" class="lang-btn">ðŸ‡®ðŸ‡¹ IT</button>
+                <button data-lang="ru" class="lang-btn">ðŸ‡·ðŸ‡º RU</button>
+                <button data-lang="th" class="lang-btn">ðŸ‡¹ðŸ‡­ à¹„à¸—à¸¢</button>
+                <button data-lang="ja" class="lang-btn">ðŸ‡¯ðŸ‡µ æ—¥æœ¬èªž</button>
             </div>
         </div>
     </header>
 
     <div id="sponsorTop" class="sponsor">
-        <img id="sponsorTopImg" class="sponsor-img" src="https://trail.bananabackpacks.com/wp-content/uploads/2022/09/sumit-chinchane-jWKk-0ZBUyg-unsplash.jpeg" alt="Sponsor">
+        <img id="sponsorTopImg" class="sponsor-img" src="https://picsum.photos/id/20/120/60" alt="Sponsor">
         <a id="sponsorTopLink" href="#" target="_blank" class="sponsor-btn">Visit Site</a>
     </div>
 
@@ -300,8 +300,8 @@
     </div>
 
     <div id="sponsorBottom" class="sponsor">
-        <img id="sponsorBottomImg" class="sponsor-img" src="https://ik.imgkit.net/3vlqs5axxjf/TW-Asia/uploadedImages/Industry/Destinations(1)/AdobeStock_613649920.jpeg?tr=w-1200%2Cfo-auto" alt="Sponsor">
-        <a id="sponsorBottomLink" href="https://www.thailand-tourism.net/" target="_blank" class="sponsor-btn">Visit Site</a>
+        <img id="sponsorBottomImg" class="sponsor-img" src="https://picsum.photos/id/26/120/60" alt="Sponsor">
+        <a id="sponsorBottomLink" href="#" target="_blank" class="sponsor-btn">Visit Site</a>
     </div>
 
     <div class="map-frame">
@@ -316,137 +316,137 @@
 </div>
 
 <script>
-    // ======================= 多言語データ (EN, DE, IT, RU, TH, JA) =======================
+    // ======================= å¤šè¨€èªžãƒ‡ãƒ¼ã‚¿ (EN, DE, IT, RU, TH, JA) =======================
     const translations = {
         en: {
-            title: "✨ Thailand Travel Guide",
+            title: "âœ¨ Thailand Travel Guide",
             sponsorBtn: "Visit Site",
-            backBtn: "← Back to list",
+            backBtn: "â† Back to list",
             officialSite: "Official Website",
-            transportLabel: "🚆 How to get there",
-            stationLabel: "📍 Nearest station / transport",
-            attractionLabel: "⭐ Highlights"
+            transportLabel: "ðŸš† How to get there",
+            stationLabel: "ðŸ“ Nearest station / transport",
+            attractionLabel: "â­ Highlights"
         },
         de: {
-            title: "✨ Thailand Reiseführer",
+            title: "âœ¨ Thailand ReisefÃ¼hrer",
             sponsorBtn: "Website besuchen",
-            backBtn: "← Zurück zur Liste",
+            backBtn: "â† ZurÃ¼ck zur Liste",
             officialSite: "Offizielle Website",
-            transportLabel: "🚆 Anreise",
-            stationLabel: "📍 Nächste Station / Verkehrsmittel",
-            attractionLabel: "⭐ Highlights"
+            transportLabel: "ðŸš† Anreise",
+            stationLabel: "ðŸ“ NÃ¤chste Station / Verkehrsmittel",
+            attractionLabel: "â­ Highlights"
         },
         it: {
-            title: "✨ Guida Turistica della Thailandia",
+            title: "âœ¨ Guida Turistica della Thailandia",
             sponsorBtn: "Visita il sito",
-            backBtn: "← Torna alla lista",
+            backBtn: "â† Torna alla lista",
             officialSite: "Sito Ufficiale",
-            transportLabel: "🚆 Come arrivare",
-            stationLabel: "📍 Stazione / mezzi più vicini",
-            attractionLabel: "⭐ Punti salienti"
+            transportLabel: "ðŸš† Come arrivare",
+            stationLabel: "ðŸ“ Stazione / mezzi piÃ¹ vicini",
+            attractionLabel: "â­ Punti salienti"
         },
         ru: {
-            title: "✨ Путеводитель по Таиланду",
-            sponsorBtn: "Перейти на сайт",
-            backBtn: "← Назад к списку",
-            officialSite: "Официальный сайт",
-            transportLabel: "🚆 Как добраться",
-            stationLabel: "📍 Ближайшая станция / транспорт",
-            attractionLabel: "⭐ Основные достопримечательности"
+            title: "âœ¨ ÐŸÑƒÑ‚ÐµÐ²Ð¾Ð´Ð¸Ñ‚ÐµÐ»ÑŒ Ð¿Ð¾ Ð¢Ð°Ð¸Ð»Ð°Ð½Ð´Ñƒ",
+            sponsorBtn: "ÐŸÐµÑ€ÐµÐ¹Ñ‚Ð¸ Ð½Ð° ÑÐ°Ð¹Ñ‚",
+            backBtn: "â† ÐÐ°Ð·Ð°Ð´ Ðº ÑÐ¿Ð¸ÑÐºÑƒ",
+            officialSite: "ÐžÑ„Ð¸Ñ†Ð¸Ð°Ð»ÑŒÐ½Ñ‹Ð¹ ÑÐ°Ð¹Ñ‚",
+            transportLabel: "ðŸš† ÐšÐ°Ðº Ð´Ð¾Ð±Ñ€Ð°Ñ‚ÑŒÑÑ",
+            stationLabel: "ðŸ“ Ð‘Ð»Ð¸Ð¶Ð°Ð¹ÑˆÐ°Ñ ÑÑ‚Ð°Ð½Ñ†Ð¸Ñ / Ñ‚Ñ€Ð°Ð½ÑÐ¿Ð¾Ñ€Ñ‚",
+            attractionLabel: "â­ ÐžÑÐ½Ð¾Ð²Ð½Ñ‹Ðµ Ð´Ð¾ÑÑ‚Ð¾Ð¿Ñ€Ð¸Ð¼ÐµÑ‡Ð°Ñ‚ÐµÐ»ÑŒÐ½Ð¾ÑÑ‚Ð¸"
         },
         th: {
-            title: "✨ คู่มือท่องเที่ยวไทย",
-            sponsorBtn: "เว็บไซต์ทางการ",
-            backBtn: "← กลับไปรายการ",
-            officialSite: "เว็บไซต์ทางการ",
-            transportLabel: "🚆 วิธีการเดินทาง",
-            stationLabel: "📍 สถานีใกล้เคียง",
-            attractionLabel: "⭐ จุดเด่น"
+            title: "âœ¨ à¸„à¸¹à¹ˆà¸¡à¸·à¸­à¸—à¹ˆà¸­à¸‡à¹€à¸—à¸µà¹ˆà¸¢à¸§à¹„à¸—à¸¢",
+            sponsorBtn: "à¹€à¸§à¹‡à¸šà¹„à¸‹à¸•à¹Œà¸—à¸²à¸‡à¸à¸²à¸£",
+            backBtn: "â† à¸à¸¥à¸±à¸šà¹„à¸›à¸£à¸²à¸¢à¸à¸²à¸£",
+            officialSite: "à¹€à¸§à¹‡à¸šà¹„à¸‹à¸•à¹Œà¸—à¸²à¸‡à¸à¸²à¸£",
+            transportLabel: "ðŸš† à¸§à¸´à¸˜à¸µà¸à¸²à¸£à¹€à¸”à¸´à¸™à¸—à¸²à¸‡",
+            stationLabel: "ðŸ“ à¸ªà¸–à¸²à¸™à¸µà¹ƒà¸à¸¥à¹‰à¹€à¸„à¸µà¸¢à¸‡",
+            attractionLabel: "â­ à¸ˆà¸¸à¸”à¹€à¸”à¹ˆà¸™"
         },
         ja: {
-            title: "✨ タイ旅行ガイド",
-            sponsorBtn: "公式サイトへ",
-            backBtn: "← 一覧に戻る",
-            officialSite: "公式ウェブサイト",
-            transportLabel: "🚆 アクセス方法",
-            stationLabel: "📍 最寄り駅 / 交通",
-            attractionLabel: "⭐ 見どころ"
+            title: "âœ¨ ã‚¿ã‚¤æ—…è¡Œã‚¬ã‚¤ãƒ‰",
+            sponsorBtn: "å…¬å¼ã‚µã‚¤ãƒˆã¸",
+            backBtn: "â† ä¸€è¦§ã«æˆ»ã‚‹",
+            officialSite: "å…¬å¼ã‚¦ã‚§ãƒ–ã‚µã‚¤ãƒˆ",
+            transportLabel: "ðŸš† ã‚¢ã‚¯ã‚»ã‚¹æ–¹æ³•",
+            stationLabel: "ðŸ“ æœ€å¯„ã‚Šé§… / äº¤é€š",
+            attractionLabel: "â­ è¦‹ã©ã“ã‚"
         }
     };
 
-    // 12観光スポット (多言語対応: en, de, it, ru, th, ja)
+    // 12è¦³å…‰ã‚¹ãƒãƒƒãƒˆ (å¤šè¨€èªžå¯¾å¿œ: en, de, it, ru, th, ja)
     const places = [
         { id: 0, img: "https://picsum.photos/id/104/400/300",
-          title: { en: "Wat Phra Kaew (Emerald Buddha)", de: "Wat Phra Kaew (Smaragd-Buddha)", it: "Wat Phra Kaew (Buddha di Smeraldo)", ru: "Ват Пхра Кео (Изумрудный Будда)", th: "วัดพระแก้ว", ja: "ワット・プラケオ（エメラルド仏）" },
-          shortDesc: { en: "The most sacred temple in Thailand.", de: "Der heiligste Tempel Thailands.", it: "Il tempio più sacro della Thailandia.", ru: "Самый священный храм Таиланда.", th: "วัดที่ศักดิ์สิทธิ์ที่สุดของไทย", ja: "タイで最も神聖な寺院" },
-          detail: { en: "Located within Grand Palace complex. Strict dress code. Nearest station: Sanam Chai MRT.", de: "Im Großen Palastkomplex gelegen. Strenge Kleiderordnung. Nächste Station: MRT Sanam Chai.", it: "Situato all'interno del complesso del Grande Palazzo. Codice di abbigliamento rigoroso. Stazione MRT Sanam Chai.", ru: "Находится на территории комплекса Великого дворца. Строгий дресс-код. Ближайшая станция MRT Sanam Chai.", th: "ตั้งอยู่ในเขตพระราชวังใหญ่ รถไฟฟ้า MRT สนามไชย ต้องแต่งกายสุภาพ", ja: "大宮殿の敷地内。服装規定あり。最寄り駅：MRTサナームチャイ駅" },
-          station: { en: "MRT Sanam Chai + walk 10 min", de: "MRT Sanam Chai + 10 min Fußweg", it: "MRT Sanam Chai + 10 min a piedi", ru: "MRT Sanam Chai + 10 минут пешком", th: "MRT สนามไชย เดิน 10 นาที", ja: "MRTサナームチャイ駅 徒歩10分" },
+          title: { en: "Wat Phra Kaew (Emerald Buddha)", de: "Wat Phra Kaew (Smaragd-Buddha)", it: "Wat Phra Kaew (Buddha di Smeraldo)", ru: "Ð’Ð°Ñ‚ ÐŸÑ…Ñ€Ð° ÐšÐµÐ¾ (Ð˜Ð·ÑƒÐ¼Ñ€ÑƒÐ´Ð½Ñ‹Ð¹ Ð‘ÑƒÐ´Ð´Ð°)", th: "à¸§à¸±à¸”à¸žà¸£à¸°à¹à¸à¹‰à¸§", ja: "ãƒ¯ãƒƒãƒˆãƒ»ãƒ—ãƒ©ã‚±ã‚ªï¼ˆã‚¨ãƒ¡ãƒ©ãƒ«ãƒ‰ä»ï¼‰" },
+          shortDesc: { en: "The most sacred temple in Thailand.", de: "Der heiligste Tempel Thailands.", it: "Il tempio piÃ¹ sacro della Thailandia.", ru: "Ð¡Ð°Ð¼Ñ‹Ð¹ ÑÐ²ÑÑ‰ÐµÐ½Ð½Ñ‹Ð¹ Ñ…Ñ€Ð°Ð¼ Ð¢Ð°Ð¸Ð»Ð°Ð½Ð´Ð°.", th: "à¸§à¸±à¸”à¸—à¸µà¹ˆà¸¨à¸±à¸à¸”à¸´à¹Œà¸ªà¸´à¸—à¸˜à¸´à¹Œà¸—à¸µà¹ˆà¸ªà¸¸à¸”à¸‚à¸­à¸‡à¹„à¸—à¸¢", ja: "ã‚¿ã‚¤ã§æœ€ã‚‚ç¥žè–ãªå¯ºé™¢" },
+          detail: { en: "Located within Grand Palace complex. Strict dress code. Nearest station: Sanam Chai MRT.", de: "Im GroÃŸen Palastkomplex gelegen. Strenge Kleiderordnung. NÃ¤chste Station: MRT Sanam Chai.", it: "Situato all'interno del complesso del Grande Palazzo. Codice di abbigliamento rigoroso. Stazione MRT Sanam Chai.", ru: "ÐÐ°Ñ…Ð¾Ð´Ð¸Ñ‚ÑÑ Ð½Ð° Ñ‚ÐµÑ€Ñ€Ð¸Ñ‚Ð¾Ñ€Ð¸Ð¸ ÐºÐ¾Ð¼Ð¿Ð»ÐµÐºÑÐ° Ð’ÐµÐ»Ð¸ÐºÐ¾Ð³Ð¾ Ð´Ð²Ð¾Ñ€Ñ†Ð°. Ð¡Ñ‚Ñ€Ð¾Ð³Ð¸Ð¹ Ð´Ñ€ÐµÑÑ-ÐºÐ¾Ð´. Ð‘Ð»Ð¸Ð¶Ð°Ð¹ÑˆÐ°Ñ ÑÑ‚Ð°Ð½Ñ†Ð¸Ñ MRT Sanam Chai.", th: "à¸•à¸±à¹‰à¸‡à¸­à¸¢à¸¹à¹ˆà¹ƒà¸™à¹€à¸‚à¸•à¸žà¸£à¸°à¸£à¸²à¸Šà¸§à¸±à¸‡à¹ƒà¸«à¸à¹ˆ à¸£à¸–à¹„à¸Ÿà¸Ÿà¹‰à¸² MRT à¸ªà¸™à¸²à¸¡à¹„à¸Šà¸¢ à¸•à¹‰à¸­à¸‡à¹à¸•à¹ˆà¸‡à¸à¸²à¸¢à¸ªà¸¸à¸ à¸²à¸ž", ja: "å¤§å®®æ®¿ã®æ•·åœ°å†…ã€‚æœè£…è¦å®šã‚ã‚Šã€‚æœ€å¯„ã‚Šé§…ï¼šMRTã‚µãƒŠãƒ¼ãƒ ãƒãƒ£ã‚¤é§…" },
+          station: { en: "MRT Sanam Chai + walk 10 min", de: "MRT Sanam Chai + 10 min FuÃŸweg", it: "MRT Sanam Chai + 10 min a piedi", ru: "MRT Sanam Chai + 10 Ð¼Ð¸Ð½ÑƒÑ‚ Ð¿ÐµÑˆÐºÐ¾Ð¼", th: "MRT à¸ªà¸™à¸²à¸¡à¹„à¸Šà¸¢ à¹€à¸”à¸´à¸™ 10 à¸™à¸²à¸—à¸µ", ja: "MRTã‚µãƒŠãƒ¼ãƒ ãƒãƒ£ã‚¤é§… å¾’æ­©10åˆ†" },
           url: "https://www.royalgrandpalace.th/" },
         { id: 1, img: "https://picsum.photos/id/106/400/300",
-          title: { en: "Wat Pho (Reclining Buddha)", de: "Wat Pho (Liegender Buddha)", it: "Wat Pho (Buddha sdraiato)", ru: "Ват Пхо (Лежащий Будда)", th: "วัดโพธิ์", ja: "ワット・ポー（涅槃仏）" },
-          shortDesc: { en: "Giant reclining Buddha & massage school.", de: "Riesiger liegender Buddha & Massageschule.", it: "Gigantesco Buddha sdraiato e scuola di massaggi.", ru: "Гигантский лежащий Будда и школа массажа.", th: "พระนอนขนาดใหญ่และโรงเรียนนวดแผนไทย", ja: "巨大な涅槃仏とタイ古式マッサージ発祥の地" },
-          detail: { en: "Nearest: MRT Sanam Chai or ferry to Tha Tien. Famous for traditional Thai massage.", de: "Nächste: MRT Sanam Chai oder Fähre nach Tha Tien. Berühmt für Thai-Massage.", it: "Vicino: MRT Sanam Chai o traghetto per Tha Tien. Famoso per il massaggio thailandese.", ru: "Ближайшая станция: MRT Sanam Chai или паром до Tha Tien. Знаменит тайским массажем.", th: "MRT สนามไชย หรือเรือถึงท่าเตียน ขึ้นชื่อเรื่องนวดแผนไทย", ja: "最寄り：MRTサナームチャイ駅またはTha Tienまでフェリー。タイ古式マッサージで有名。" },
-          station: { en: "MRT Sanam Chai / Ferry", de: "MRT Sanam Chai / Fähre", it: "MRT Sanam Chai / Traghetto", ru: "MRT Sanam Chai / Паром", th: "MRT สนามไชย / เรือ", ja: "MRTサナームチャイ駅 / フェリー" },
+          title: { en: "Wat Pho (Reclining Buddha)", de: "Wat Pho (Liegender Buddha)", it: "Wat Pho (Buddha sdraiato)", ru: "Ð’Ð°Ñ‚ ÐŸÑ…Ð¾ (Ð›ÐµÐ¶Ð°Ñ‰Ð¸Ð¹ Ð‘ÑƒÐ´Ð´Ð°)", th: "à¸§à¸±à¸”à¹‚à¸žà¸˜à¸´à¹Œ", ja: "ãƒ¯ãƒƒãƒˆãƒ»ãƒãƒ¼ï¼ˆæ¶…æ§ƒä»ï¼‰" },
+          shortDesc: { en: "Giant reclining Buddha & massage school.", de: "Riesiger liegender Buddha & Massageschule.", it: "Gigantesco Buddha sdraiato e scuola di massaggi.", ru: "Ð“Ð¸Ð³Ð°Ð½Ñ‚ÑÐºÐ¸Ð¹ Ð»ÐµÐ¶Ð°Ñ‰Ð¸Ð¹ Ð‘ÑƒÐ´Ð´Ð° Ð¸ ÑˆÐºÐ¾Ð»Ð° Ð¼Ð°ÑÑÐ°Ð¶Ð°.", th: "à¸žà¸£à¸°à¸™à¸­à¸™à¸‚à¸™à¸²à¸”à¹ƒà¸«à¸à¹ˆà¹à¸¥à¸°à¹‚à¸£à¸‡à¹€à¸£à¸µà¸¢à¸™à¸™à¸§à¸”à¹à¸œà¸™à¹„à¸—à¸¢", ja: "å·¨å¤§ãªæ¶…æ§ƒä»ã¨ã‚¿ã‚¤å¤å¼ãƒžãƒƒã‚µãƒ¼ã‚¸ç™ºç¥¥ã®åœ°" },
+          detail: { en: "Nearest: MRT Sanam Chai or ferry to Tha Tien. Famous for traditional Thai massage.", de: "NÃ¤chste: MRT Sanam Chai oder FÃ¤hre nach Tha Tien. BerÃ¼hmt fÃ¼r Thai-Massage.", it: "Vicino: MRT Sanam Chai o traghetto per Tha Tien. Famoso per il massaggio thailandese.", ru: "Ð‘Ð»Ð¸Ð¶Ð°Ð¹ÑˆÐ°Ñ ÑÑ‚Ð°Ð½Ñ†Ð¸Ñ: MRT Sanam Chai Ð¸Ð»Ð¸ Ð¿Ð°Ñ€Ð¾Ð¼ Ð´Ð¾ Tha Tien. Ð—Ð½Ð°Ð¼ÐµÐ½Ð¸Ñ‚ Ñ‚Ð°Ð¹ÑÐºÐ¸Ð¼ Ð¼Ð°ÑÑÐ°Ð¶ÐµÐ¼.", th: "MRT à¸ªà¸™à¸²à¸¡à¹„à¸Šà¸¢ à¸«à¸£à¸·à¸­à¹€à¸£à¸·à¸­à¸–à¸¶à¸‡à¸—à¹ˆà¸²à¹€à¸•à¸µà¸¢à¸™ à¸‚à¸¶à¹‰à¸™à¸Šà¸·à¹ˆà¸­à¹€à¸£à¸·à¹ˆà¸­à¸‡à¸™à¸§à¸”à¹à¸œà¸™à¹„à¸—à¸¢", ja: "æœ€å¯„ã‚Šï¼šMRTã‚µãƒŠãƒ¼ãƒ ãƒãƒ£ã‚¤é§…ã¾ãŸã¯Tha Tienã¾ã§ãƒ•ã‚§ãƒªãƒ¼ã€‚ã‚¿ã‚¤å¤å¼ãƒžãƒƒã‚µãƒ¼ã‚¸ã§æœ‰åã€‚" },
+          station: { en: "MRT Sanam Chai / Ferry", de: "MRT Sanam Chai / FÃ¤hre", it: "MRT Sanam Chai / Traghetto", ru: "MRT Sanam Chai / ÐŸÐ°Ñ€Ð¾Ð¼", th: "MRT à¸ªà¸™à¸²à¸¡à¹„à¸Šà¸¢ / à¹€à¸£à¸·à¸­", ja: "MRTã‚µãƒŠãƒ¼ãƒ ãƒãƒ£ã‚¤é§… / ãƒ•ã‚§ãƒªãƒ¼" },
           url: "https://www.watpho.com/" },
         { id: 2, img: "https://picsum.photos/id/96/400/300",
-          title: { en: "Chatuchak Market", de: "Chatuchak Markt", it: "Mercato di Chatuchak", ru: "Рынок Чатучак", th: "ตลาดนัดจตุจักร", ja: "チャトゥチャック市場" },
-          shortDesc: { en: "Weekend mega market, 15,000+ stalls.", de: "Wochenend-Megamarkt, über 15.000 Stände.", it: "Mercato gigante del fine settimana, oltre 15.000 bancarelle.", ru: "Гигантский рынок выходного дня, более 15 000 прилавков.", th: "ตลาดนัดสุดสัปดาห์ 15,000+ ร้าน", ja: "週末限定の巨大マーケット、15,000店以上" },
-          detail: { en: "BTS Mo Chit / MRT Chatuchak Park. Only Sat-Sun. Great for souvenirs & street food.", de: "BTS Mo Chit / MRT Chatuchak Park. Nur Sa-So. Ideal für Souvenirs & Street Food.", it: "BTS Mo Chit / MRT Chatuchak Park. Solo sab-dom. Ottimo per souvenir e cibo di strada.", ru: "BTS Mo Chit / MRT Chatuchak Park. Только сб-вс. Отлично для сувениров и уличной еды.", th: "BTS หมอชิต / MRT สวนจตุจักร เปิดเสาร์-อาทิตย์ ของที่ระลึกและอาหารข้างทาง", ja: "BTSモーチット駅 / MRTチャトゥチャックパーク駅。土曜・日曜のみ。お土産と屋台に最適。" },
-          station: { en: "BTS Mo Chit / MRT Chatuchak Park", de: "BTS Mo Chit / MRT Chatuchak Park", it: "BTS Mo Chit / MRT Chatuchak Park", ru: "BTS Mo Chit / MRT Chatuchak Park", th: "BTS หมอชิต / MRT สวนจตุจักร", ja: "BTSモーチット駅 / MRTチャトゥチャックパーク駅" },
+          title: { en: "Chatuchak Market", de: "Chatuchak Markt", it: "Mercato di Chatuchak", ru: "Ð Ñ‹Ð½Ð¾Ðº Ð§Ð°Ñ‚ÑƒÑ‡Ð°Ðº", th: "à¸•à¸¥à¸²à¸”à¸™à¸±à¸”à¸ˆà¸•à¸¸à¸ˆà¸±à¸à¸£", ja: "ãƒãƒ£ãƒˆã‚¥ãƒãƒ£ãƒƒã‚¯å¸‚å ´" },
+          shortDesc: { en: "Weekend mega market, 15,000+ stalls.", de: "Wochenend-Megamarkt, Ã¼ber 15.000 StÃ¤nde.", it: "Mercato gigante del fine settimana, oltre 15.000 bancarelle.", ru: "Ð“Ð¸Ð³Ð°Ð½Ñ‚ÑÐºÐ¸Ð¹ Ñ€Ñ‹Ð½Ð¾Ðº Ð²Ñ‹Ñ…Ð¾Ð´Ð½Ð¾Ð³Ð¾ Ð´Ð½Ñ, Ð±Ð¾Ð»ÐµÐµ 15 000 Ð¿Ñ€Ð¸Ð»Ð°Ð²ÐºÐ¾Ð².", th: "à¸•à¸¥à¸²à¸”à¸™à¸±à¸”à¸ªà¸¸à¸”à¸ªà¸±à¸›à¸”à¸²à¸«à¹Œ 15,000+ à¸£à¹‰à¸²à¸™", ja: "é€±æœ«é™å®šã®å·¨å¤§ãƒžãƒ¼ã‚±ãƒƒãƒˆã€15,000åº—ä»¥ä¸Š" },
+          detail: { en: "BTS Mo Chit / MRT Chatuchak Park. Only Sat-Sun. Great for souvenirs & street food.", de: "BTS Mo Chit / MRT Chatuchak Park. Nur Sa-So. Ideal fÃ¼r Souvenirs & Street Food.", it: "BTS Mo Chit / MRT Chatuchak Park. Solo sab-dom. Ottimo per souvenir e cibo di strada.", ru: "BTS Mo Chit / MRT Chatuchak Park. Ð¢Ð¾Ð»ÑŒÐºÐ¾ ÑÐ±-Ð²Ñ. ÐžÑ‚Ð»Ð¸Ñ‡Ð½Ð¾ Ð´Ð»Ñ ÑÑƒÐ²ÐµÐ½Ð¸Ñ€Ð¾Ð² Ð¸ ÑƒÐ»Ð¸Ñ‡Ð½Ð¾Ð¹ ÐµÐ´Ñ‹.", th: "BTS à¸«à¸¡à¸­à¸Šà¸´à¸• / MRT à¸ªà¸§à¸™à¸ˆà¸•à¸¸à¸ˆà¸±à¸à¸£ à¹€à¸›à¸´à¸”à¹€à¸ªà¸²à¸£à¹Œ-à¸­à¸²à¸—à¸´à¸•à¸¢à¹Œ à¸‚à¸­à¸‡à¸—à¸µà¹ˆà¸£à¸°à¸¥à¸¶à¸à¹à¸¥à¸°à¸­à¸²à¸«à¸²à¸£à¸‚à¹‰à¸²à¸‡à¸—à¸²à¸‡", ja: "BTSãƒ¢ãƒ¼ãƒãƒƒãƒˆé§… / MRTãƒãƒ£ãƒˆã‚¥ãƒãƒ£ãƒƒã‚¯ãƒ‘ãƒ¼ã‚¯é§…ã€‚åœŸæ›œãƒ»æ—¥æ›œã®ã¿ã€‚ãŠåœŸç”£ã¨å±‹å°ã«æœ€é©ã€‚" },
+          station: { en: "BTS Mo Chit / MRT Chatuchak Park", de: "BTS Mo Chit / MRT Chatuchak Park", it: "BTS Mo Chit / MRT Chatuchak Park", ru: "BTS Mo Chit / MRT Chatuchak Park", th: "BTS à¸«à¸¡à¸­à¸Šà¸´à¸• / MRT à¸ªà¸§à¸™à¸ˆà¸•à¸¸à¸ˆà¸±à¸à¸£", ja: "BTSãƒ¢ãƒ¼ãƒãƒƒãƒˆé§… / MRTãƒãƒ£ãƒˆã‚¥ãƒãƒ£ãƒƒã‚¯ãƒ‘ãƒ¼ã‚¯é§…" },
           url: "https://www.chatuchakmarket.org/" },
         { id: 3, img: "https://picsum.photos/id/30/400/300",
-          title: { en: "Ayutthaya Historical Park", de: "Historischer Park Ayutthaya", it: "Parco Storico di Ayutthaya", ru: "Исторический парк Аюттхая", th: "อุทยานประวัติศาสตร์อยุธยา", ja: "アユタヤ歴史公園" },
-          shortDesc: { en: "UNESCO ancient capital ruins.", de: "UNESCO-Weltkulturerbe, Ruinen der alten Hauptstadt.", it: "Rovine dell'antica capitale UNESCO.", ru: "Руины древней столицы, объект ЮНЕСКО.", th: "ซากปรักหักพังเมืองหลวงเก่า มรดกโลก", ja: "ユネスコ世界遺産の古代遺跡" },
-          detail: { en: "Train from Bangkok (1.5h). Rent a bicycle to explore temples like Wat Mahathat.", de: "Zug von Bangkok (1,5 Std.). Fahrrad mieten, um Tempel wie Wat Mahathat zu erkunden.", it: "Treno da Bangkok (1,5 ore). Noleggia una bicicletta per esplorare templi come Wat Mahathat.", ru: "Поезд из Бангкока (1,5 ч). Арендуйте велосипед, чтобы осмотреть храмы, такие как Ват Махатхат.", th: "รถไฟจากกรุงเทพฯ 1.5 ชม. ปั่นจักรยานชมวัดมหาธาตุ", ja: "バンコクから電車で約1.5時間。自転車を借りてワット・マハタートなどの寺院を巡る。" },
-          station: { en: "Ayutthaya Railway Station", de: "Bahnhof Ayutthaya", it: "Stazione ferroviaria di Ayutthaya", ru: "Железнодорожная станция Аюттхая", th: "สถานีรถไฟอยุธยา", ja: "アユタヤ駅" },
+          title: { en: "Ayutthaya Historical Park", de: "Historischer Park Ayutthaya", it: "Parco Storico di Ayutthaya", ru: "Ð˜ÑÑ‚Ð¾Ñ€Ð¸Ñ‡ÐµÑÐºÐ¸Ð¹ Ð¿Ð°Ñ€Ðº ÐÑŽÑ‚Ñ‚Ñ…Ð°Ñ", th: "à¸­à¸¸à¸—à¸¢à¸²à¸™à¸›à¸£à¸°à¸§à¸±à¸•à¸´à¸¨à¸²à¸ªà¸•à¸£à¹Œà¸­à¸¢à¸¸à¸˜à¸¢à¸²", ja: "ã‚¢ãƒ¦ã‚¿ãƒ¤æ­´å²å…¬åœ’" },
+          shortDesc: { en: "UNESCO ancient capital ruins.", de: "UNESCO-Weltkulturerbe, Ruinen der alten Hauptstadt.", it: "Rovine dell'antica capitale UNESCO.", ru: "Ð ÑƒÐ¸Ð½Ñ‹ Ð´Ñ€ÐµÐ²Ð½ÐµÐ¹ ÑÑ‚Ð¾Ð»Ð¸Ñ†Ñ‹, Ð¾Ð±ÑŠÐµÐºÑ‚ Ð®ÐÐ•Ð¡ÐšÐž.", th: "à¸‹à¸²à¸à¸›à¸£à¸±à¸à¸«à¸±à¸à¸žà¸±à¸‡à¹€à¸¡à¸·à¸­à¸‡à¸«à¸¥à¸§à¸‡à¹€à¸à¹ˆà¸² à¸¡à¸£à¸”à¸à¹‚à¸¥à¸", ja: "ãƒ¦ãƒã‚¹ã‚³ä¸–ç•Œéºç”£ã®å¤ä»£éºè·¡" },
+          detail: { en: "Train from Bangkok (1.5h). Rent a bicycle to explore temples like Wat Mahathat.", de: "Zug von Bangkok (1,5 Std.). Fahrrad mieten, um Tempel wie Wat Mahathat zu erkunden.", it: "Treno da Bangkok (1,5 ore). Noleggia una bicicletta per esplorare templi come Wat Mahathat.", ru: "ÐŸÐ¾ÐµÐ·Ð´ Ð¸Ð· Ð‘Ð°Ð½Ð³ÐºÐ¾ÐºÐ° (1,5 Ñ‡). ÐÑ€ÐµÐ½Ð´ÑƒÐ¹Ñ‚Ðµ Ð²ÐµÐ»Ð¾ÑÐ¸Ð¿ÐµÐ´, Ñ‡Ñ‚Ð¾Ð±Ñ‹ Ð¾ÑÐ¼Ð¾Ñ‚Ñ€ÐµÑ‚ÑŒ Ñ…Ñ€Ð°Ð¼Ñ‹, Ñ‚Ð°ÐºÐ¸Ðµ ÐºÐ°Ðº Ð’Ð°Ñ‚ ÐœÐ°Ñ…Ð°Ñ‚Ñ…Ð°Ñ‚.", th: "à¸£à¸–à¹„à¸Ÿà¸ˆà¸²à¸à¸à¸£à¸¸à¸‡à¹€à¸—à¸žà¸¯ 1.5 à¸Šà¸¡. à¸›à¸±à¹ˆà¸™à¸ˆà¸±à¸à¸£à¸¢à¸²à¸™à¸Šà¸¡à¸§à¸±à¸”à¸¡à¸«à¸²à¸˜à¸²à¸•à¸¸", ja: "ãƒãƒ³ã‚³ã‚¯ã‹ã‚‰é›»è»Šã§ç´„1.5æ™‚é–“ã€‚è‡ªè»¢è»Šã‚’å€Ÿã‚Šã¦ãƒ¯ãƒƒãƒˆãƒ»ãƒžãƒã‚¿ãƒ¼ãƒˆãªã©ã®å¯ºé™¢ã‚’å·¡ã‚‹ã€‚" },
+          station: { en: "Ayutthaya Railway Station", de: "Bahnhof Ayutthaya", it: "Stazione ferroviaria di Ayutthaya", ru: "Ð–ÐµÐ»ÐµÐ·Ð½Ð¾Ð´Ð¾Ñ€Ð¾Ð¶Ð½Ð°Ñ ÑÑ‚Ð°Ð½Ñ†Ð¸Ñ ÐÑŽÑ‚Ñ‚Ñ…Ð°Ñ", th: "à¸ªà¸–à¸²à¸™à¸µà¸£à¸–à¹„à¸Ÿà¸­à¸¢à¸¸à¸˜à¸¢à¸²", ja: "ã‚¢ãƒ¦ã‚¿ãƒ¤é§…" },
           url: "https://www.ayutthaya-history.com/" },
         { id: 4, img: "https://picsum.photos/id/152/400/300",
-          title: { en: "Chiang Mai Old City", de: "Altstadt von Chiang Mai", it: "Città Vecchia di Chiang Mai", ru: "Старый город Чиангмай", th: "เมืองเก่าเชียงใหม่", ja: "チェンマイ旧市街" },
-          shortDesc: { en: "Ancient walls, temples & night bazaar.", de: "Alte Mauern, Tempel und Nachtbasar.", it: "Mura antiche, templi e bazar notturno.", ru: "Древние стены, храмы и ночной базар.", th: "กำแพงเมืองเก่า วัด และตลาดกลางคืน", ja: "古い城壁、寺院、ナイトバザール" },
-          detail: { en: "Fly to Chiang Mai. Songthaews (red trucks) are common. Visit Wat Phra Singh.", de: "Flug nach Chiang Mai. Songthaews (rote Trucks) sind üblich. Besuchen Sie Wat Phra Singh.", it: "Volo per Chiang Mai. I Songthaew (camion rossi) sono comuni. Visita Wat Phra Singh.", ru: "Летите в Чиангмай. Сонгтэу (красные грузовики) распространены. Посетите Ват Пхра Сингх.", th: "บินไปเชียงใหม่ รถสองแถวแดง วัดพระสิงห์", ja: "バンコクから飛行機でチェンマイへ。赤いソンテウが一般的。ワット・プラシンへ。" },
-          station: { en: "Chiang Mai Airport + city songthaew", de: "Flughafen Chiang Mai + Songthaew", it: "Aeroporto di Chiang Mai + songthaew", ru: "Аэропорт Чиангмай + сонгтэу", th: "สนามบินเชียงใหม่ + สองแถว", ja: "チェンマイ空港 + 市内ソンテウ" },
+          title: { en: "Chiang Mai Old City", de: "Altstadt von Chiang Mai", it: "CittÃ  Vecchia di Chiang Mai", ru: "Ð¡Ñ‚Ð°Ñ€Ñ‹Ð¹ Ð³Ð¾Ñ€Ð¾Ð´ Ð§Ð¸Ð°Ð½Ð³Ð¼Ð°Ð¹", th: "à¹€à¸¡à¸·à¸­à¸‡à¹€à¸à¹ˆà¸²à¹€à¸Šà¸µà¸¢à¸‡à¹ƒà¸«à¸¡à¹ˆ", ja: "ãƒã‚§ãƒ³ãƒžã‚¤æ—§å¸‚è¡—" },
+          shortDesc: { en: "Ancient walls, temples & night bazaar.", de: "Alte Mauern, Tempel und Nachtbasar.", it: "Mura antiche, templi e bazar notturno.", ru: "Ð”Ñ€ÐµÐ²Ð½Ð¸Ðµ ÑÑ‚ÐµÐ½Ñ‹, Ñ…Ñ€Ð°Ð¼Ñ‹ Ð¸ Ð½Ð¾Ñ‡Ð½Ð¾Ð¹ Ð±Ð°Ð·Ð°Ñ€.", th: "à¸à¸³à¹à¸žà¸‡à¹€à¸¡à¸·à¸­à¸‡à¹€à¸à¹ˆà¸² à¸§à¸±à¸” à¹à¸¥à¸°à¸•à¸¥à¸²à¸”à¸à¸¥à¸²à¸‡à¸„à¸·à¸™", ja: "å¤ã„åŸŽå£ã€å¯ºé™¢ã€ãƒŠã‚¤ãƒˆãƒã‚¶ãƒ¼ãƒ«" },
+          detail: { en: "Fly to Chiang Mai. Songthaews (red trucks) are common. Visit Wat Phra Singh.", de: "Flug nach Chiang Mai. Songthaews (rote Trucks) sind Ã¼blich. Besuchen Sie Wat Phra Singh.", it: "Volo per Chiang Mai. I Songthaew (camion rossi) sono comuni. Visita Wat Phra Singh.", ru: "Ð›ÐµÑ‚Ð¸Ñ‚Ðµ Ð² Ð§Ð¸Ð°Ð½Ð³Ð¼Ð°Ð¹. Ð¡Ð¾Ð½Ð³Ñ‚ÑÑƒ (ÐºÑ€Ð°ÑÐ½Ñ‹Ðµ Ð³Ñ€ÑƒÐ·Ð¾Ð²Ð¸ÐºÐ¸) Ñ€Ð°ÑÐ¿Ñ€Ð¾ÑÑ‚Ñ€Ð°Ð½ÐµÐ½Ñ‹. ÐŸÐ¾ÑÐµÑ‚Ð¸Ñ‚Ðµ Ð’Ð°Ñ‚ ÐŸÑ…Ñ€Ð° Ð¡Ð¸Ð½Ð³Ñ….", th: "à¸šà¸´à¸™à¹„à¸›à¹€à¸Šà¸µà¸¢à¸‡à¹ƒà¸«à¸¡à¹ˆ à¸£à¸–à¸ªà¸­à¸‡à¹à¸–à¸§à¹à¸”à¸‡ à¸§à¸±à¸”à¸žà¸£à¸°à¸ªà¸´à¸‡à¸«à¹Œ", ja: "ãƒãƒ³ã‚³ã‚¯ã‹ã‚‰é£›è¡Œæ©Ÿã§ãƒã‚§ãƒ³ãƒžã‚¤ã¸ã€‚èµ¤ã„ã‚½ãƒ³ãƒ†ã‚¦ãŒä¸€èˆ¬çš„ã€‚ãƒ¯ãƒƒãƒˆãƒ»ãƒ—ãƒ©ã‚·ãƒ³ã¸ã€‚" },
+          station: { en: "Chiang Mai Airport + city songthaew", de: "Flughafen Chiang Mai + Songthaew", it: "Aeroporto di Chiang Mai + songthaew", ru: "ÐÑÑ€Ð¾Ð¿Ð¾Ñ€Ñ‚ Ð§Ð¸Ð°Ð½Ð³Ð¼Ð°Ð¹ + ÑÐ¾Ð½Ð³Ñ‚ÑÑƒ", th: "à¸ªà¸™à¸²à¸¡à¸šà¸´à¸™à¹€à¸Šà¸µà¸¢à¸‡à¹ƒà¸«à¸¡à¹ˆ + à¸ªà¸­à¸‡à¹à¸–à¸§", ja: "ãƒã‚§ãƒ³ãƒžã‚¤ç©ºæ¸¯ + å¸‚å†…ã‚½ãƒ³ãƒ†ã‚¦" },
           url: "https://www.tourismchiangmai.org/" },
         { id: 5, img: "https://picsum.photos/id/29/400/300",
-          title: { en: "Doi Suthep", de: "Doi Suthep", it: "Doi Suthep", ru: "Дой Сутеп", th: "ดอยสุเทพ", ja: "ドイ・ステプ" },
-          shortDesc: { en: "Mountain temple with golden pagoda.", de: "Bergtempel mit goldener Pagode.", it: "Tempio di montagna con pagoda d'oro.", ru: "Горный храм с золотой пагодой.", th: "วัดบนดอยที่มีเจดีย์ทองคำ", ja: "黄金の仏塔がある山頂寺院" },
-          detail: { en: "From Chiang Mai, take songthaew from Pratu Chang Phuak. 306 steps or cable car.", de: "Von Chiang Mai mit dem Songthaew von Pratu Chang Phuak. 306 Stufen oder Seilbahn.", it: "Da Chiang Mai, prendi songthaew da Pratu Chang Phuak. 306 gradini o funivia.", ru: "Из Чиангмая на сонгтэу от Прату Чанг Пхуак. 306 ступеней или канатная дорога.", th: "จากเชียงใหม่นั่งสองแถวจากประตูช้างเผือก ขึ้นบันได 306 ขั้นหรือกระเช้า", ja: "チェンマイからチャンプアック門発のソンテウ。306段の階段またはケーブルカー。" },
-          station: { en: "Songthaew from Chang Phuak Gate", de: "Songthaew vom Chang Phuak Tor", it: "Songthaew da Chang Phuak Gate", ru: "Сонгтэу от ворот Чанг Пхуак", th: "สองแถวจากประตูช้างเผือก", ja: "チャンプアック門からソンテウ" },
+          title: { en: "Doi Suthep", de: "Doi Suthep", it: "Doi Suthep", ru: "Ð”Ð¾Ð¹ Ð¡ÑƒÑ‚ÐµÐ¿", th: "à¸”à¸­à¸¢à¸ªà¸¸à¹€à¸—à¸ž", ja: "ãƒ‰ã‚¤ãƒ»ã‚¹ãƒ†ãƒ—" },
+          shortDesc: { en: "Mountain temple with golden pagoda.", de: "Bergtempel mit goldener Pagode.", it: "Tempio di montagna con pagoda d'oro.", ru: "Ð“Ð¾Ñ€Ð½Ñ‹Ð¹ Ñ…Ñ€Ð°Ð¼ Ñ Ð·Ð¾Ð»Ð¾Ñ‚Ð¾Ð¹ Ð¿Ð°Ð³Ð¾Ð´Ð¾Ð¹.", th: "à¸§à¸±à¸”à¸šà¸™à¸”à¸­à¸¢à¸—à¸µà¹ˆà¸¡à¸µà¹€à¸ˆà¸”à¸µà¸¢à¹Œà¸—à¸­à¸‡à¸„à¸³", ja: "é»„é‡‘ã®ä»å¡”ãŒã‚ã‚‹å±±é ‚å¯ºé™¢" },
+          detail: { en: "From Chiang Mai, take songthaew from Pratu Chang Phuak. 306 steps or cable car.", de: "Von Chiang Mai mit dem Songthaew von Pratu Chang Phuak. 306 Stufen oder Seilbahn.", it: "Da Chiang Mai, prendi songthaew da Pratu Chang Phuak. 306 gradini o funivia.", ru: "Ð˜Ð· Ð§Ð¸Ð°Ð½Ð³Ð¼Ð°Ñ Ð½Ð° ÑÐ¾Ð½Ð³Ñ‚ÑÑƒ Ð¾Ñ‚ ÐŸÑ€Ð°Ñ‚Ñƒ Ð§Ð°Ð½Ð³ ÐŸÑ…ÑƒÐ°Ðº. 306 ÑÑ‚ÑƒÐ¿ÐµÐ½ÐµÐ¹ Ð¸Ð»Ð¸ ÐºÐ°Ð½Ð°Ñ‚Ð½Ð°Ñ Ð´Ð¾Ñ€Ð¾Ð³Ð°.", th: "à¸ˆà¸²à¸à¹€à¸Šà¸µà¸¢à¸‡à¹ƒà¸«à¸¡à¹ˆà¸™à¸±à¹ˆà¸‡à¸ªà¸­à¸‡à¹à¸–à¸§à¸ˆà¸²à¸à¸›à¸£à¸°à¸•à¸¹à¸Šà¹‰à¸²à¸‡à¹€à¸œà¸·à¸­à¸ à¸‚à¸¶à¹‰à¸™à¸šà¸±à¸™à¹„à¸” 306 à¸‚à¸±à¹‰à¸™à¸«à¸£à¸·à¸­à¸à¸£à¸°à¹€à¸Šà¹‰à¸²", ja: "ãƒã‚§ãƒ³ãƒžã‚¤ã‹ã‚‰ãƒãƒ£ãƒ³ãƒ—ã‚¢ãƒƒã‚¯é–€ç™ºã®ã‚½ãƒ³ãƒ†ã‚¦ã€‚306æ®µã®éšŽæ®µã¾ãŸã¯ã‚±ãƒ¼ãƒ–ãƒ«ã‚«ãƒ¼ã€‚" },
+          station: { en: "Songthaew from Chang Phuak Gate", de: "Songthaew vom Chang Phuak Tor", it: "Songthaew da Chang Phuak Gate", ru: "Ð¡Ð¾Ð½Ð³Ñ‚ÑÑƒ Ð¾Ñ‚ Ð²Ð¾Ñ€Ð¾Ñ‚ Ð§Ð°Ð½Ð³ ÐŸÑ…ÑƒÐ°Ðº", th: "à¸ªà¸­à¸‡à¹à¸–à¸§à¸ˆà¸²à¸à¸›à¸£à¸°à¸•à¸¹à¸Šà¹‰à¸²à¸‡à¹€à¸œà¸·à¸­à¸", ja: "ãƒãƒ£ãƒ³ãƒ—ã‚¢ãƒƒã‚¯é–€ã‹ã‚‰ã‚½ãƒ³ãƒ†ã‚¦" },
           url: "https://www.doisuthep.com/" },
         { id: 6, img: "https://picsum.photos/id/163/400/300",
-          title: { en: "Patong Beach, Phuket", de: "Patong Beach, Phuket", it: "Spiaggia di Patong, Phuket", ru: "Пляж Патонг, Пхукет", th: "หาดป่าตอง ภูเก็ต", ja: "パトンビーチ（プーケット）" },
-          shortDesc: { en: "Lively beach with water sports & nightlife.", de: "Lebhafter Strand mit Wassersport & Nachtleben.", it: "Spiaggia vivace con sport acquatici e vita notturna.", ru: "Оживленный пляж с водными видами спорта и ночной жизнью.", th: "ชายหาดคึกคัก กีฬาทางน้ำ กลางคืนสนุก", ja: "ウォータースポーツとナイトライフが楽しめる賑やかなビーチ" },
-          detail: { en: "Fly to Phuket, then taxi/minibus. Jet ski, banana boat.", de: "Flug nach Phuket, dann Taxi/Minibus. Jetski, Bananenboot.", it: "Volo per Phuket, poi taxi/minibus. Moto d'acqua, banana boat.", ru: "Летите на Пхукет, затем такси/микроавтобус. Гидроцикл, банановая лодка.", th: "นั่งเครื่องบินถึงภูเก็ต รถแท็กซี่ เจ็ทสกี เรือกล้วย", ja: "プーケット空港からタクシーまたはミニバス。ジェットスキーやバナナボートに最適。" },
-          station: { en: "Phuket Airport + taxi (45 min)", de: "Flughafen Phuket + Taxi (45 min)", it: "Aeroporto di Phuket + taxi (45 min)", ru: "Аэропорт Пхукет + такси (45 минут)", th: "สนามบินภูเก็ต + แท็กซี่ 45 นาที", ja: "プーケット空港 + タクシーで45分" },
+          title: { en: "Patong Beach, Phuket", de: "Patong Beach, Phuket", it: "Spiaggia di Patong, Phuket", ru: "ÐŸÐ»ÑÐ¶ ÐŸÐ°Ñ‚Ð¾Ð½Ð³, ÐŸÑ…ÑƒÐºÐµÑ‚", th: "à¸«à¸²à¸”à¸›à¹ˆà¸²à¸•à¸­à¸‡ à¸ à¸¹à¹€à¸à¹‡à¸•", ja: "ãƒ‘ãƒˆãƒ³ãƒ“ãƒ¼ãƒï¼ˆãƒ—ãƒ¼ã‚±ãƒƒãƒˆï¼‰" },
+          shortDesc: { en: "Lively beach with water sports & nightlife.", de: "Lebhafter Strand mit Wassersport & Nachtleben.", it: "Spiaggia vivace con sport acquatici e vita notturna.", ru: "ÐžÐ¶Ð¸Ð²Ð»ÐµÐ½Ð½Ñ‹Ð¹ Ð¿Ð»ÑÐ¶ Ñ Ð²Ð¾Ð´Ð½Ñ‹Ð¼Ð¸ Ð²Ð¸Ð´Ð°Ð¼Ð¸ ÑÐ¿Ð¾Ñ€Ñ‚Ð° Ð¸ Ð½Ð¾Ñ‡Ð½Ð¾Ð¹ Ð¶Ð¸Ð·Ð½ÑŒÑŽ.", th: "à¸Šà¸²à¸¢à¸«à¸²à¸”à¸„à¸¶à¸à¸„à¸±à¸ à¸à¸µà¸¬à¸²à¸—à¸²à¸‡à¸™à¹‰à¸³ à¸à¸¥à¸²à¸‡à¸„à¸·à¸™à¸ªà¸™à¸¸à¸", ja: "ã‚¦ã‚©ãƒ¼ã‚¿ãƒ¼ã‚¹ãƒãƒ¼ãƒ„ã¨ãƒŠã‚¤ãƒˆãƒ©ã‚¤ãƒ•ãŒæ¥½ã—ã‚ã‚‹è³‘ã‚„ã‹ãªãƒ“ãƒ¼ãƒ" },
+          detail: { en: "Fly to Phuket, then taxi/minibus. Jet ski, banana boat.", de: "Flug nach Phuket, dann Taxi/Minibus. Jetski, Bananenboot.", it: "Volo per Phuket, poi taxi/minibus. Moto d'acqua, banana boat.", ru: "Ð›ÐµÑ‚Ð¸Ñ‚Ðµ Ð½Ð° ÐŸÑ…ÑƒÐºÐµÑ‚, Ð·Ð°Ñ‚ÐµÐ¼ Ñ‚Ð°ÐºÑÐ¸/Ð¼Ð¸ÐºÑ€Ð¾Ð°Ð²Ñ‚Ð¾Ð±ÑƒÑ. Ð“Ð¸Ð´Ñ€Ð¾Ñ†Ð¸ÐºÐ», Ð±Ð°Ð½Ð°Ð½Ð¾Ð²Ð°Ñ Ð»Ð¾Ð´ÐºÐ°.", th: "à¸™à¸±à¹ˆà¸‡à¹€à¸„à¸£à¸·à¹ˆà¸­à¸‡à¸šà¸´à¸™à¸–à¸¶à¸‡à¸ à¸¹à¹€à¸à¹‡à¸• à¸£à¸–à¹à¸—à¹‡à¸à¸‹à¸µà¹ˆ à¹€à¸ˆà¹‡à¸—à¸ªà¸à¸µ à¹€à¸£à¸·à¸­à¸à¸¥à¹‰à¸§à¸¢", ja: "ãƒ—ãƒ¼ã‚±ãƒƒãƒˆç©ºæ¸¯ã‹ã‚‰ã‚¿ã‚¯ã‚·ãƒ¼ã¾ãŸã¯ãƒŸãƒ‹ãƒã‚¹ã€‚ã‚¸ã‚§ãƒƒãƒˆã‚¹ã‚­ãƒ¼ã‚„ãƒãƒŠãƒŠãƒœãƒ¼ãƒˆã«æœ€é©ã€‚" },
+          station: { en: "Phuket Airport + taxi (45 min)", de: "Flughafen Phuket + Taxi (45 min)", it: "Aeroporto di Phuket + taxi (45 min)", ru: "ÐÑÑ€Ð¾Ð¿Ð¾Ñ€Ñ‚ ÐŸÑ…ÑƒÐºÐµÑ‚ + Ñ‚Ð°ÐºÑÐ¸ (45 Ð¼Ð¸Ð½ÑƒÑ‚)", th: "à¸ªà¸™à¸²à¸¡à¸šà¸´à¸™à¸ à¸¹à¹€à¸à¹‡à¸• + à¹à¸—à¹‡à¸à¸‹à¸µà¹ˆ 45 à¸™à¸²à¸—à¸µ", ja: "ãƒ—ãƒ¼ã‚±ãƒƒãƒˆç©ºæ¸¯ + ã‚¿ã‚¯ã‚·ãƒ¼ã§45åˆ†" },
           url: "https://www.phuket.net/" },
         { id: 7, img: "https://picsum.photos/id/130/400/300",
-          title: { en: "Phi Phi Islands", de: "Phi Phi Inseln", it: "Isole Phi Phi", ru: "Острова Пхи Пхи", th: "หมู่เกาะพีพี", ja: "ピピ諸島" },
-          shortDesc: { en: "Crystal clear water, Maya Bay.", de: "Kristallklares Wasser, Maya Bay.", it: "Acqua cristallina, Baia di Maya.", ru: "Кристально чистая вода, бухта Майя.", th: "น้ำใสมาก อ่าวมาหยา", ja: "透き通った海、マヤ湾" },
-          detail: { en: "Speedboat tour from Phuket or Krabi. Snorkeling and scenic viewpoints.", de: "Schnellboot-Tour von Phuket oder Krabi. Schnorcheln und Aussichtspunkte.", it: "Tour in speedboat da Phuket o Krabi. Snorkeling e punti panoramici.", ru: "Тур на скоростном катере из Пхукета или Краби. Сноркелинг и живописные виды.", th: "เรือสปีดโบ๊ทจากภูเก็ตหรือกระบี่ ดำน้ำตื้น จุดชมวิว", ja: "プーケットまたはクラビからスピードボートツアー。シュノーケリングと絶景ポイント。" },
-          station: { en: "Rassada Pier (Phuket) + speedboat", de: "Rassada Pier (Phuket) + Schnellboot", it: "Molo Rassada (Phuket) + speedboat", ru: "Причал Рассада (Пхукет) + скоростной катер", th: "ท่าเรือรัษฎา + สปีดโบ๊ท", ja: "ラッサダー埠頭（プーケット）+ スピードボート" },
+          title: { en: "Phi Phi Islands", de: "Phi Phi Inseln", it: "Isole Phi Phi", ru: "ÐžÑÑ‚Ñ€Ð¾Ð²Ð° ÐŸÑ…Ð¸ ÐŸÑ…Ð¸", th: "à¸«à¸¡à¸¹à¹ˆà¹€à¸à¸²à¸°à¸žà¸µà¸žà¸µ", ja: "ãƒ”ãƒ”è«¸å³¶" },
+          shortDesc: { en: "Crystal clear water, Maya Bay.", de: "Kristallklares Wasser, Maya Bay.", it: "Acqua cristallina, Baia di Maya.", ru: "ÐšÑ€Ð¸ÑÑ‚Ð°Ð»ÑŒÐ½Ð¾ Ñ‡Ð¸ÑÑ‚Ð°Ñ Ð²Ð¾Ð´Ð°, Ð±ÑƒÑ…Ñ‚Ð° ÐœÐ°Ð¹Ñ.", th: "à¸™à¹‰à¸³à¹ƒà¸ªà¸¡à¸²à¸ à¸­à¹ˆà¸²à¸§à¸¡à¸²à¸«à¸¢à¸²", ja: "é€ãé€šã£ãŸæµ·ã€ãƒžãƒ¤æ¹¾" },
+          detail: { en: "Speedboat tour from Phuket or Krabi. Snorkeling and scenic viewpoints.", de: "Schnellboot-Tour von Phuket oder Krabi. Schnorcheln und Aussichtspunkte.", it: "Tour in speedboat da Phuket o Krabi. Snorkeling e punti panoramici.", ru: "Ð¢ÑƒÑ€ Ð½Ð° ÑÐºÐ¾Ñ€Ð¾ÑÑ‚Ð½Ð¾Ð¼ ÐºÐ°Ñ‚ÐµÑ€Ðµ Ð¸Ð· ÐŸÑ…ÑƒÐºÐµÑ‚Ð° Ð¸Ð»Ð¸ ÐšÑ€Ð°Ð±Ð¸. Ð¡Ð½Ð¾Ñ€ÐºÐµÐ»Ð¸Ð½Ð³ Ð¸ Ð¶Ð¸Ð²Ð¾Ð¿Ð¸ÑÐ½Ñ‹Ðµ Ð²Ð¸Ð´Ñ‹.", th: "à¹€à¸£à¸·à¸­à¸ªà¸›à¸µà¸”à¹‚à¸šà¹Šà¸—à¸ˆà¸²à¸à¸ à¸¹à¹€à¸à¹‡à¸•à¸«à¸£à¸·à¸­à¸à¸£à¸°à¸šà¸µà¹ˆ à¸”à¸³à¸™à¹‰à¸³à¸•à¸·à¹‰à¸™ à¸ˆà¸¸à¸”à¸Šà¸¡à¸§à¸´à¸§", ja: "ãƒ—ãƒ¼ã‚±ãƒƒãƒˆã¾ãŸã¯ã‚¯ãƒ©ãƒ“ã‹ã‚‰ã‚¹ãƒ”ãƒ¼ãƒ‰ãƒœãƒ¼ãƒˆãƒ„ã‚¢ãƒ¼ã€‚ã‚·ãƒ¥ãƒŽãƒ¼ã‚±ãƒªãƒ³ã‚°ã¨çµ¶æ™¯ãƒã‚¤ãƒ³ãƒˆã€‚" },
+          station: { en: "Rassada Pier (Phuket) + speedboat", de: "Rassada Pier (Phuket) + Schnellboot", it: "Molo Rassada (Phuket) + speedboat", ru: "ÐŸÑ€Ð¸Ñ‡Ð°Ð» Ð Ð°ÑÑÐ°Ð´Ð° (ÐŸÑ…ÑƒÐºÐµÑ‚) + ÑÐºÐ¾Ñ€Ð¾ÑÑ‚Ð½Ð¾Ð¹ ÐºÐ°Ñ‚ÐµÑ€", th: "à¸—à¹ˆà¸²à¹€à¸£à¸·à¸­à¸£à¸±à¸©à¸Žà¸² + à¸ªà¸›à¸µà¸”à¹‚à¸šà¹Šà¸—", ja: "ãƒ©ãƒƒã‚µãƒ€ãƒ¼åŸ é ­ï¼ˆãƒ—ãƒ¼ã‚±ãƒƒãƒˆï¼‰+ ã‚¹ãƒ”ãƒ¼ãƒ‰ãƒœãƒ¼ãƒˆ" },
           url: "https://www.phiphiisland.com/" },
         { id: 8, img: "https://picsum.photos/id/94/400/300",
-          title: { en: "Phuket Old Town", de: "Altstadt von Phuket", it: "Città Vecchia di Phuket", ru: "Старый город Пхукета", th: "เมืองเก่าภูเก็ต", ja: "プーケット旧市街" },
-          shortDesc: { en: "Sino-Portuguese architecture & cafes.", de: "Sino-portugiesische Architektur & Cafés.", it: "Architettura sino-portoghese e caffè.", ru: "Китайско-португальская архитектура и кафе.", th: "สถาปัตยกรรมจีน-โปรตุเกส ร้านกาแฟ", ja: "シノ・ポルトガル様式の建築とカフェ" },
-          detail: { en: "Walkable area, famous for Sunday Walking Street Market.", de: "Fußgängerzone, berühmt für den Sunday Walking Street Market.", it: "Zona pedonale, famosa per il mercato domenicale di Walking Street.", ru: "Пешеходная зона, известная воскресным рынком Walking Street.", th: "เดินเล่น ตลาดนัดวันอาทิตย์", ja: "徒歩エリア。日曜日の歩行者天国マーケットで有名。" },
-          station: { en: "Local bus or taxi from beaches", de: "Lokaler Bus oder Taxi von den Stränden", it: "Autobus locale o taxi dalle spiagge", ru: "Местный автобус или такси от пляжей", th: "รถประจำทางหรือแท็กซี่จากหาด", ja: "ビーチから地元バスまたはタクシー" },
+          title: { en: "Phuket Old Town", de: "Altstadt von Phuket", it: "CittÃ  Vecchia di Phuket", ru: "Ð¡Ñ‚Ð°Ñ€Ñ‹Ð¹ Ð³Ð¾Ñ€Ð¾Ð´ ÐŸÑ…ÑƒÐºÐµÑ‚Ð°", th: "à¹€à¸¡à¸·à¸­à¸‡à¹€à¸à¹ˆà¸²à¸ à¸¹à¹€à¸à¹‡à¸•", ja: "ãƒ—ãƒ¼ã‚±ãƒƒãƒˆæ—§å¸‚è¡—" },
+          shortDesc: { en: "Sino-Portuguese architecture & cafes.", de: "Sino-portugiesische Architektur & CafÃ©s.", it: "Architettura sino-portoghese e caffÃ¨.", ru: "ÐšÐ¸Ñ‚Ð°Ð¹ÑÐºÐ¾-Ð¿Ð¾Ñ€Ñ‚ÑƒÐ³Ð°Ð»ÑŒÑÐºÐ°Ñ Ð°Ñ€Ñ…Ð¸Ñ‚ÐµÐºÑ‚ÑƒÑ€Ð° Ð¸ ÐºÐ°Ñ„Ðµ.", th: "à¸ªà¸–à¸²à¸›à¸±à¸•à¸¢à¸à¸£à¸£à¸¡à¸ˆà¸µà¸™-à¹‚à¸›à¸£à¸•à¸¸à¹€à¸à¸ª à¸£à¹‰à¸²à¸™à¸à¸²à¹à¸Ÿ", ja: "ã‚·ãƒŽãƒ»ãƒãƒ«ãƒˆã‚¬ãƒ«æ§˜å¼ã®å»ºç¯‰ã¨ã‚«ãƒ•ã‚§" },
+          detail: { en: "Walkable area, famous for Sunday Walking Street Market.", de: "FuÃŸgÃ¤ngerzone, berÃ¼hmt fÃ¼r den Sunday Walking Street Market.", it: "Zona pedonale, famosa per il mercato domenicale di Walking Street.", ru: "ÐŸÐµÑˆÐµÑ…Ð¾Ð´Ð½Ð°Ñ Ð·Ð¾Ð½Ð°, Ð¸Ð·Ð²ÐµÑÑ‚Ð½Ð°Ñ Ð²Ð¾ÑÐºÑ€ÐµÑÐ½Ñ‹Ð¼ Ñ€Ñ‹Ð½ÐºÐ¾Ð¼ Walking Street.", th: "à¹€à¸”à¸´à¸™à¹€à¸¥à¹ˆà¸™ à¸•à¸¥à¸²à¸”à¸™à¸±à¸”à¸§à¸±à¸™à¸­à¸²à¸—à¸´à¸•à¸¢à¹Œ", ja: "å¾’æ­©ã‚¨ãƒªã‚¢ã€‚æ—¥æ›œæ—¥ã®æ­©è¡Œè€…å¤©å›½ãƒžãƒ¼ã‚±ãƒƒãƒˆã§æœ‰åã€‚" },
+          station: { en: "Local bus or taxi from beaches", de: "Lokaler Bus oder Taxi von den StrÃ¤nden", it: "Autobus locale o taxi dalle spiagge", ru: "ÐœÐµÑÑ‚Ð½Ñ‹Ð¹ Ð°Ð²Ñ‚Ð¾Ð±ÑƒÑ Ð¸Ð»Ð¸ Ñ‚Ð°ÐºÑÐ¸ Ð¾Ñ‚ Ð¿Ð»ÑÐ¶ÐµÐ¹", th: "à¸£à¸–à¸›à¸£à¸°à¸ˆà¸³à¸—à¸²à¸‡à¸«à¸£à¸·à¸­à¹à¸—à¹‡à¸à¸‹à¸µà¹ˆà¸ˆà¸²à¸à¸«à¸²à¸”", ja: "ãƒ“ãƒ¼ãƒã‹ã‚‰åœ°å…ƒãƒã‚¹ã¾ãŸã¯ã‚¿ã‚¯ã‚·ãƒ¼" },
           url: "https://oldtownphuket.com/" },
         { id: 9, img: "https://picsum.photos/id/42/400/300",
-          title: { en: "Damnoen Saduak Floating Market", de: "Schwimmender Markt Damnoen Saduak", it: "Mercato galleggiante di Damnoen Saduak", ru: "Плавающий рынок Дамноен Садуак", th: "ตลาดน้ำดำเนินสะดวก", ja: "ダムヌン・サドアク水上マーケット" },
-          shortDesc: { en: "Paddle boats selling fresh food.", de: "Paddelboote mit frischen Lebensmitteln.", it: "Barche a remi che vendono cibo fresco.", ru: "Лодки на веслах продают свежие продукты.", th: "เรือ paddles ขายอาหารสด", ja: "新鮮な料理を売る手漕ぎボート" },
-          detail: { en: "Day trip from Bangkok (1.5h drive). Best early morning. Hire long-tail boat.", de: "Tagesausflug ab Bangkok (1,5 Std. Fahrt). Am besten früh morgens. Langschwanzboot mieten.", it: "Gita di un giorno da Bangkok (1,5 ore di auto). Ideale al mattino presto. Noleggia una barca long-tail.", ru: "Однодневная поездка из Бангкока (1,5 часа езды). Лучше всего ранним утром. Аренда лодки с длинным хвостом.", th: "ทริปวันเดียวจากกรุงเทพฯ เวลาดีตอนเช้า เรือหางยาว", ja: "バンコクから日帰り（車で1.5時間）。早朝がベスト。長尾船をチャーター。" },
-          station: { en: "Minivan from Southern Bus Terminal", de: "Minivan vom südlichen Busbahnhof", it: "Minivan dal terminal degli autobus sud", ru: "Микроавтобус от южного автовокзала", th: "รถตู้จากสถานีขนส่งสายใต้", ja: "南部バスターミナルからミニバン" },
+          title: { en: "Damnoen Saduak Floating Market", de: "Schwimmender Markt Damnoen Saduak", it: "Mercato galleggiante di Damnoen Saduak", ru: "ÐŸÐ»Ð°Ð²Ð°ÑŽÑ‰Ð¸Ð¹ Ñ€Ñ‹Ð½Ð¾Ðº Ð”Ð°Ð¼Ð½Ð¾ÐµÐ½ Ð¡Ð°Ð´ÑƒÐ°Ðº", th: "à¸•à¸¥à¸²à¸”à¸™à¹‰à¸³à¸”à¸³à¹€à¸™à¸´à¸™à¸ªà¸°à¸”à¸§à¸", ja: "ãƒ€ãƒ ãƒŒãƒ³ãƒ»ã‚µãƒ‰ã‚¢ã‚¯æ°´ä¸Šãƒžãƒ¼ã‚±ãƒƒãƒˆ" },
+          shortDesc: { en: "Paddle boats selling fresh food.", de: "Paddelboote mit frischen Lebensmitteln.", it: "Barche a remi che vendono cibo fresco.", ru: "Ð›Ð¾Ð´ÐºÐ¸ Ð½Ð° Ð²ÐµÑÐ»Ð°Ñ… Ð¿Ñ€Ð¾Ð´Ð°ÑŽÑ‚ ÑÐ²ÐµÐ¶Ð¸Ðµ Ð¿Ñ€Ð¾Ð´ÑƒÐºÑ‚Ñ‹.", th: "à¹€à¸£à¸·à¸­ paddles à¸‚à¸²à¸¢à¸­à¸²à¸«à¸²à¸£à¸ªà¸”", ja: "æ–°é®®ãªæ–™ç†ã‚’å£²ã‚‹æ‰‹æ¼•ãŽãƒœãƒ¼ãƒˆ" },
+          detail: { en: "Day trip from Bangkok (1.5h drive). Best early morning. Hire long-tail boat.", de: "Tagesausflug ab Bangkok (1,5 Std. Fahrt). Am besten frÃ¼h morgens. Langschwanzboot mieten.", it: "Gita di un giorno da Bangkok (1,5 ore di auto). Ideale al mattino presto. Noleggia una barca long-tail.", ru: "ÐžÐ´Ð½Ð¾Ð´Ð½ÐµÐ²Ð½Ð°Ñ Ð¿Ð¾ÐµÐ·Ð´ÐºÐ° Ð¸Ð· Ð‘Ð°Ð½Ð³ÐºÐ¾ÐºÐ° (1,5 Ñ‡Ð°ÑÐ° ÐµÐ·Ð´Ñ‹). Ð›ÑƒÑ‡ÑˆÐµ Ð²ÑÐµÐ³Ð¾ Ñ€Ð°Ð½Ð½Ð¸Ð¼ ÑƒÑ‚Ñ€Ð¾Ð¼. ÐÑ€ÐµÐ½Ð´Ð° Ð»Ð¾Ð´ÐºÐ¸ Ñ Ð´Ð»Ð¸Ð½Ð½Ñ‹Ð¼ Ñ…Ð²Ð¾ÑÑ‚Ð¾Ð¼.", th: "à¸—à¸£à¸´à¸›à¸§à¸±à¸™à¹€à¸”à¸µà¸¢à¸§à¸ˆà¸²à¸à¸à¸£à¸¸à¸‡à¹€à¸—à¸žà¸¯ à¹€à¸§à¸¥à¸²à¸”à¸µà¸•à¸­à¸™à¹€à¸Šà¹‰à¸² à¹€à¸£à¸·à¸­à¸«à¸²à¸‡à¸¢à¸²à¸§", ja: "ãƒãƒ³ã‚³ã‚¯ã‹ã‚‰æ—¥å¸°ã‚Šï¼ˆè»Šã§1.5æ™‚é–“ï¼‰ã€‚æ—©æœãŒãƒ™ã‚¹ãƒˆã€‚é•·å°¾èˆ¹ã‚’ãƒãƒ£ãƒ¼ã‚¿ãƒ¼ã€‚" },
+          station: { en: "Minivan from Southern Bus Terminal", de: "Minivan vom sÃ¼dlichen Busbahnhof", it: "Minivan dal terminal degli autobus sud", ru: "ÐœÐ¸ÐºÑ€Ð¾Ð°Ð²Ñ‚Ð¾Ð±ÑƒÑ Ð¾Ñ‚ ÑŽÐ¶Ð½Ð¾Ð³Ð¾ Ð°Ð²Ñ‚Ð¾Ð²Ð¾ÐºÐ·Ð°Ð»Ð°", th: "à¸£à¸–à¸•à¸¹à¹‰à¸ˆà¸²à¸à¸ªà¸–à¸²à¸™à¸µà¸‚à¸™à¸ªà¹ˆà¸‡à¸ªà¸²à¸¢à¹ƒà¸•à¹‰", ja: "å—éƒ¨ãƒã‚¹ã‚¿ãƒ¼ãƒŸãƒŠãƒ«ã‹ã‚‰ãƒŸãƒ‹ãƒãƒ³" },
           url: "https://www.damnoensaduak.com/" },
         { id: 10, img: "https://picsum.photos/id/39/400/300",
-          title: { en: "Khao Soi (Chiang Mai dish)", de: "Khao Soi (Gericht aus Chiang Mai)", it: "Khao Soi (piatto di Chiang Mai)", ru: "Кхао Сой (блюдо Чиангмая)", th: "ข้าวซอยเชียงใหม่", ja: "カオソーイ（チェンマイ料理）" },
-          shortDesc: { en: "Famous northern Thai curry noodle soup.", de: "Berühmte nordthailändische Curry-Nudelsuppe.", it: "Zuppa di noodle al curry tailandese settentrionale.", ru: "Знаменитый северный тайский суп с лапшой карри.", th: "แกงกะหรี่เส้น noodles ภาคเหนือ", ja: "タイ北部の有名なカレー風味の麺料理" },
-          detail: { en: "Try at Khao Soi Khun Yai or many local shops. Best lunch spot.", de: "Probieren Sie im Khao Soi Khun Yai oder in vielen lokalen Geschäften. Bester Mittagstisch.", it: "Prova da Khao Soi Khun Yai o in molti negozi locali. Ottimo per pranzo.", ru: "Попробуйте в Khao Soi Khun Yai или в местных магазинах. Лучшее место для обеда.", th: "ลองที่ข้าวซอยคุณยาย หรือร้านท้องถิ่น", ja: "カオソーイ・クンヤイまたは地元の多くの店で。ランチに最適。" },
-          station: { en: "Nimman area or Old City", de: "Nimman-Gebiet oder Altstadt", it: "Area Nimman o Città Vecchia", ru: "Район Нимман или Старый город", th: "ย่านนิมมาน หรือเมืองเก่า", ja: "ニマン地区または旧市街" },
+          title: { en: "Khao Soi (Chiang Mai dish)", de: "Khao Soi (Gericht aus Chiang Mai)", it: "Khao Soi (piatto di Chiang Mai)", ru: "ÐšÑ…Ð°Ð¾ Ð¡Ð¾Ð¹ (Ð±Ð»ÑŽÐ´Ð¾ Ð§Ð¸Ð°Ð½Ð³Ð¼Ð°Ñ)", th: "à¸‚à¹‰à¸²à¸§à¸‹à¸­à¸¢à¹€à¸Šà¸µà¸¢à¸‡à¹ƒà¸«à¸¡à¹ˆ", ja: "ã‚«ã‚ªã‚½ãƒ¼ã‚¤ï¼ˆãƒã‚§ãƒ³ãƒžã‚¤æ–™ç†ï¼‰" },
+          shortDesc: { en: "Famous northern Thai curry noodle soup.", de: "BerÃ¼hmte nordthailÃ¤ndische Curry-Nudelsuppe.", it: "Zuppa di noodle al curry tailandese settentrionale.", ru: "Ð—Ð½Ð°Ð¼ÐµÐ½Ð¸Ñ‚Ñ‹Ð¹ ÑÐµÐ²ÐµÑ€Ð½Ñ‹Ð¹ Ñ‚Ð°Ð¹ÑÐºÐ¸Ð¹ ÑÑƒÐ¿ Ñ Ð»Ð°Ð¿ÑˆÐ¾Ð¹ ÐºÐ°Ñ€Ñ€Ð¸.", th: "à¹à¸à¸‡à¸à¸°à¸«à¸£à¸µà¹ˆà¹€à¸ªà¹‰à¸™ noodles à¸ à¸²à¸„à¹€à¸«à¸™à¸·à¸­", ja: "ã‚¿ã‚¤åŒ—éƒ¨ã®æœ‰åãªã‚«ãƒ¬ãƒ¼é¢¨å‘³ã®éººæ–™ç†" },
+          detail: { en: "Try at Khao Soi Khun Yai or many local shops. Best lunch spot.", de: "Probieren Sie im Khao Soi Khun Yai oder in vielen lokalen GeschÃ¤ften. Bester Mittagstisch.", it: "Prova da Khao Soi Khun Yai o in molti negozi locali. Ottimo per pranzo.", ru: "ÐŸÐ¾Ð¿Ñ€Ð¾Ð±ÑƒÐ¹Ñ‚Ðµ Ð² Khao Soi Khun Yai Ð¸Ð»Ð¸ Ð² Ð¼ÐµÑÑ‚Ð½Ñ‹Ñ… Ð¼Ð°Ð³Ð°Ð·Ð¸Ð½Ð°Ñ…. Ð›ÑƒÑ‡ÑˆÐµÐµ Ð¼ÐµÑÑ‚Ð¾ Ð´Ð»Ñ Ð¾Ð±ÐµÐ´Ð°.", th: "à¸¥à¸­à¸‡à¸—à¸µà¹ˆà¸‚à¹‰à¸²à¸§à¸‹à¸­à¸¢à¸„à¸¸à¸“à¸¢à¸²à¸¢ à¸«à¸£à¸·à¸­à¸£à¹‰à¸²à¸™à¸—à¹‰à¸­à¸‡à¸–à¸´à¹ˆà¸™", ja: "ã‚«ã‚ªã‚½ãƒ¼ã‚¤ãƒ»ã‚¯ãƒ³ãƒ¤ã‚¤ã¾ãŸã¯åœ°å…ƒã®å¤šãã®åº—ã§ã€‚ãƒ©ãƒ³ãƒã«æœ€é©ã€‚" },
+          station: { en: "Nimman area or Old City", de: "Nimman-Gebiet oder Altstadt", it: "Area Nimman o CittÃ  Vecchia", ru: "Ð Ð°Ð¹Ð¾Ð½ ÐÐ¸Ð¼Ð¼Ð°Ð½ Ð¸Ð»Ð¸ Ð¡Ñ‚Ð°Ñ€Ñ‹Ð¹ Ð³Ð¾Ñ€Ð¾Ð´", th: "à¸¢à¹ˆà¸²à¸™à¸™à¸´à¸¡à¸¡à¸²à¸™ à¸«à¸£à¸·à¸­à¹€à¸¡à¸·à¸­à¸‡à¹€à¸à¹ˆà¸²", ja: "ãƒ‹ãƒžãƒ³åœ°åŒºã¾ãŸã¯æ—§å¸‚è¡—" },
           url: "https://www.chiangmaicitylife.com/" },
         { id: 11, img: "https://picsum.photos/id/431/400/300",
-          title: { en: "Chao Phraya River Cruise", de: "Chao Phraya Flusskreuzfahrt", it: "Crociera sul fiume Chao Phraya", ru: "Круиз по реке Чао Прайя", th: "ล่องเรือเจ้าพระยา", ja: "チャオプラヤ川クルーズ" },
-          shortDesc: { en: "Dinner cruise with temple lights.", de: "Abendkreuzfahrt mit Tempelbeleuchtung.", it: "Crociera con cena e luci dei templi.", ru: "Ужин-круиз с освещением храмов.", th: "อาหารค่ำลอยน้ำ ชมวัด illuminated", ja: "寺院のライトアップを楽しむディナークルーズ" },
-          detail: { en: "Pick from Saphan Taksin pier. Book evening cruise with Thai buffet.", de: "Abfahrt am Saphan Taksin Pier. Buchen Sie eine Abendkreuzfahrt mit thailändischem Buffet.", it: "Partenza dal molo Saphan Taksin. Prenota una crociera serale con buffet thailandese.", ru: "Отправление от причала Сапхан Таксин. Забронируйте вечерний круиз с тайским шведским столом.", th: "ท่าสะพานตากสิน จองตอนเย็น buffet ไทย", ja: "サパーンタクシン桟橋から出発。タイ料理ビュッフェ付き夜のクルーズを予約。" },
-          station: { en: "BTS Saphan Taksin", de: "BTS Saphan Taksin", it: "BTS Saphan Taksin", ru: "BTS Saphan Taksin", th: "BTS สะพานตากสิน", ja: "BTSサパーンタクシン駅" },
+          title: { en: "Chao Phraya River Cruise", de: "Chao Phraya Flusskreuzfahrt", it: "Crociera sul fiume Chao Phraya", ru: "ÐšÑ€ÑƒÐ¸Ð· Ð¿Ð¾ Ñ€ÐµÐºÐµ Ð§Ð°Ð¾ ÐŸÑ€Ð°Ð¹Ñ", th: "à¸¥à¹ˆà¸­à¸‡à¹€à¸£à¸·à¸­à¹€à¸ˆà¹‰à¸²à¸žà¸£à¸°à¸¢à¸²", ja: "ãƒãƒ£ã‚ªãƒ—ãƒ©ãƒ¤å·ã‚¯ãƒ«ãƒ¼ã‚º" },
+          shortDesc: { en: "Dinner cruise with temple lights.", de: "Abendkreuzfahrt mit Tempelbeleuchtung.", it: "Crociera con cena e luci dei templi.", ru: "Ð£Ð¶Ð¸Ð½-ÐºÑ€ÑƒÐ¸Ð· Ñ Ð¾ÑÐ²ÐµÑ‰ÐµÐ½Ð¸ÐµÐ¼ Ñ…Ñ€Ð°Ð¼Ð¾Ð².", th: "à¸­à¸²à¸«à¸²à¸£à¸„à¹ˆà¸³à¸¥à¸­à¸¢à¸™à¹‰à¸³ à¸Šà¸¡à¸§à¸±à¸” illuminated", ja: "å¯ºé™¢ã®ãƒ©ã‚¤ãƒˆã‚¢ãƒƒãƒ—ã‚’æ¥½ã—ã‚€ãƒ‡ã‚£ãƒŠãƒ¼ã‚¯ãƒ«ãƒ¼ã‚º" },
+          detail: { en: "Pick from Saphan Taksin pier. Book evening cruise with Thai buffet.", de: "Abfahrt am Saphan Taksin Pier. Buchen Sie eine Abendkreuzfahrt mit thailÃ¤ndischem Buffet.", it: "Partenza dal molo Saphan Taksin. Prenota una crociera serale con buffet thailandese.", ru: "ÐžÑ‚Ð¿Ñ€Ð°Ð²Ð»ÐµÐ½Ð¸Ðµ Ð¾Ñ‚ Ð¿Ñ€Ð¸Ñ‡Ð°Ð»Ð° Ð¡Ð°Ð¿Ñ…Ð°Ð½ Ð¢Ð°ÐºÑÐ¸Ð½. Ð—Ð°Ð±Ñ€Ð¾Ð½Ð¸Ñ€ÑƒÐ¹Ñ‚Ðµ Ð²ÐµÑ‡ÐµÑ€Ð½Ð¸Ð¹ ÐºÑ€ÑƒÐ¸Ð· Ñ Ñ‚Ð°Ð¹ÑÐºÐ¸Ð¼ ÑˆÐ²ÐµÐ´ÑÐºÐ¸Ð¼ ÑÑ‚Ð¾Ð»Ð¾Ð¼.", th: "à¸—à¹ˆà¸²à¸ªà¸°à¸žà¸²à¸™à¸•à¸²à¸à¸ªà¸´à¸™ à¸ˆà¸­à¸‡à¸•à¸­à¸™à¹€à¸¢à¹‡à¸™ buffet à¹„à¸—à¸¢", ja: "ã‚µãƒ‘ãƒ¼ãƒ³ã‚¿ã‚¯ã‚·ãƒ³æ¡Ÿæ©‹ã‹ã‚‰å‡ºç™ºã€‚ã‚¿ã‚¤æ–™ç†ãƒ“ãƒ¥ãƒƒãƒ•ã‚§ä»˜ãå¤œã®ã‚¯ãƒ«ãƒ¼ã‚ºã‚’äºˆç´„ã€‚" },
+          station: { en: "BTS Saphan Taksin", de: "BTS Saphan Taksin", it: "BTS Saphan Taksin", ru: "BTS Saphan Taksin", th: "BTS à¸ªà¸°à¸žà¸²à¸™à¸•à¸²à¸à¸ªà¸´à¸™", ja: "BTSã‚µãƒ‘ãƒ¼ãƒ³ã‚¿ã‚¯ã‚·ãƒ³é§…" },
           url: "https://www.chaophrayacruise.com/" }
     ];
 
@@ -540,10 +540,10 @@
                 <button class="back-btn" id="backToListBtn">${trans.backBtn}</button>
                 <img class="detail-img" src="${place.img}" alt="${place.title[currentLang]}">
                 <h2>${place.title[currentLang]}</h2>
-                <p><strong>⭐</strong> ${place.shortDesc[currentLang]}</p>
+                <p><strong>â­</strong> ${place.shortDesc[currentLang]}</p>
                 <p><strong>${trans.attractionLabel}</strong><br> ${place.detail[currentLang]}</p>
                 <p><strong>${trans.stationLabel}</strong><br> ${place.station[currentLang]}</p>
-                <a href="${place.url}" target="_blank" class="official-link">${trans.officialSite} ↗</a>
+                <a href="${place.url}" target="_blank" class="official-link">${trans.officialSite} â†—</a>
             </div>
         `;
         document.getElementById('backToListBtn').onclick = () => {
